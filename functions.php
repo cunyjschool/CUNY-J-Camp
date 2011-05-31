@@ -43,7 +43,8 @@ class cunyjcamp
 		add_theme_support( 'post-thumbnails' );
 
 		if ( is_admin() ) {
-			add_action( 'admin_menu', array(&$this, 'add_admin_menu_items') );
+			add_action( 'admin_menu', array( &$this, 'add_admin_menu_items' ) );
+			add_action( 'admin_menu', array( &$this, 'remove_metaboxes' ) );
 		}
 
 	} // END init()
@@ -95,9 +96,51 @@ class cunyjcamp
 	 */
 	function create_taxonomies() {
 		
-		// @todo Register any taxonomies we need. Skills?	
+		// @todo Register any taxonomies we need. Skills?
+		
+		// Register the Instructors taxonomy
+		$args = array(
+			'label' => 'Instructors',
+			'labels' => array(
+				'name' => 'Instructors',
+				'singular_name' => 'Instructor',
+				'search_items' =>  'Search Instructors',
+				'popular_items' => 'Popular Contexts',
+				'all_items' => 'All Instructors',
+				'parent_item' => 'Parent Instructor',
+				'parent_item_colon' => 'Parent Instructor:',
+				'edit_item' => 'Edit Instructor', 
+				'update_item' => 'Update Instructor',
+				'add_new_item' => 'Add New Instructor',
+				'new_item_name' => 'New Instructor',
+				'separate_items_with_commas' => 'Separate instructors with commas',
+				'add_or_remove_items' => 'Add or remove instructors',
+				'choose_from_most_used' => 'Choose from the most common instructors',
+				'menu_name' => 'Instructors',
+			),
+			'show_tagcloud' => false,		
+			'rewrite' => array(
+				'slug' => 'instructors',
+				'hierarchical' => true,
+			),
+		);
+
+		$post_types = array(
+			'cunyjcamp_event',
+		);
+		register_taxonomy( 'cunyjcamp_instructors', $post_types, $args );
+		$this->theme_taxonomies[] = 'cunyjcamp_instructors';	
 		
 	} // END create_taxonomies()
+	
+	/**
+	 * remove_metaboxes
+	 */
+	function remove_metaboxes() {
+		
+		remove_meta_box( 'tagsdiv-cunyjcamp_instructors', 'cunyjcamp_event', 'side' );
+		
+	} // END remove_metaboxes()
 	
 	/**
 	 * register_settings()
