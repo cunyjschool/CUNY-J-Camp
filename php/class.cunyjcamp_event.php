@@ -75,8 +75,8 @@ class cunyjcamp_event
 		
 		// Only load scripts and styles on relevant pages in the WordPress admin
 		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'page.php' ) {
-			wp_enqueue_script( 'cunyjcamp_events_admin_js', get_bloginfo( 'template_url' ) . '/js/events_admin.js', array('jquery'), CUNYJCAMP_VERSION, true );
-			wp_enqueue_style( 'cunyjcamp_events_admin_css', get_bloginfo( 'template_url' ) . '/css/events_admin.css', false, CUNYJCAMP_VERSION, 'all' );
+			wp_enqueue_script( 'cunyjcamp_event_admin_js', get_bloginfo( 'template_url' ) . '/js/event_admin.js', array( 'jquery' ), CUNYJCAMP_VERSION, true );
+			wp_enqueue_style( 'cunyjcamp_event_admin_css', get_bloginfo( 'template_url' ) . '/css/event_admin.css', false, CUNYJCAMP_VERSION, 'all' );
 		}
 		
 	} // END add_admin_scripts()
@@ -98,6 +98,44 @@ class cunyjcamp_event
 		global $post;
 		
 		// @todo build the meta box
+		
+		?>
+		
+		<div class="inner">
+			
+			<div class="date-time">
+				
+				<h4>Date &amp; Time</h4>
+				
+				<p>Start date <span class="required">*</span>: tk</p>
+				
+				<p>Start time <span class="required">*</span>: tk</p>
+				
+				<p>End date <span class="required">*</span>: tk</p>
+				
+				<p>End time <span class="required">*</span>: tk</p>
+				
+			</div>
+			
+			<div class="requirements">
+				
+				<h4>Requirements</h4>
+				
+				<p>Prerequisite Knowledge: tk</p>
+				
+				<p>Equipment: tk</p>
+				
+			</div>
+			
+			<div class="location">
+				
+				<h4>Location</h4>
+				
+			</div>
+			
+		</div>
+		
+		<?php
 		
 	} // END post_meta_box()
 	
