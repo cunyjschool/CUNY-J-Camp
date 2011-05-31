@@ -2,6 +2,9 @@
 
 define( 'CUNYJCAMP_VERSION', '0.0' );
 
+// Require necessary files
+require_once( 'php/class.cunyjcamp_event.php' );
+
 if ( !class_exists( 'cunyjcamp' ) ) {
 	
 class cunyjcamp
@@ -17,7 +20,8 @@ class cunyjcamp
 	 */
 	function __construct() {
 		
-		$this->options = get_option( $this->options_group_name );		
+		$this->options = get_option( $this->options_group_name );	
+		$this->events = new cunyjcamp_event();	
 		
 		add_action( 'after_setup_theme', array( &$this, 'init' ) );
 
