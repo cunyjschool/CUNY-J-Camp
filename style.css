@@ -22,25 +22,51 @@ body{
     min-width:960px;
 }
 
-.header {
-    font-family: Verdana, Helvetica, Arial, sans-serif;
+.header .logo{
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
+    color:#a3b6ac;
+    font-size:50px;
+    line-height:100px;
+    border-bottom:1px solid #a3b6ac;
+    height:120px;
+    text-transform: uppercase;
+    letter-spacing:-5px;
+}
+
+.header .logo span{
     color:#637b6e;
-    font-size:40px;
-    padding:20px 0 30px;
+}
+
+.header .navbar a{
+    color:#a01018;
+    font-size:20px;
+    height:20px;
+    padding:10px;
+    display:inline-block;
+    border-right:1px solid #a3b6ac;
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.header .navbar {
+    border-top:1px solid #a3b6ac;
+    margin-top:3px;
 }
 
 .event-title a {
     font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
     color:#637b6e;
     font-size:22px;
-    line-height:25px;
 }
 
 .event-byline {
     color:#a3b6ac;
-    font-size:12px;
-    line-height:22px;
+    font-size:10px;
+    line-height:15px;
     text-transform: uppercase;
+    border-top:1px dotted #a3b6ac;
+    margin:2px 0 5px 0;
 }
 
 .event-category {
@@ -58,10 +84,17 @@ body{
 }
 
 .footer {
-/*    background: -moz-linear-gradient(center top , #a3b6ac, #637b6e) repeat scroll 0 0;*/
     color:#fff;
-    background:#000;
+    background: url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-leftbg.png') repeat-y scroll 0 0 #2C2C2C;
     height:220px;
+}
+
+.dent {
+    background:url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-top.png') repeat-x;
+    height:4px;
+    display:block;
+    margin:0;
+    padding:0;
 }
 
 h1, h2, h3, h4, html, body, p {
@@ -106,7 +139,6 @@ a:hover {
 }
 
 /* HEADER */
-
 
 /* FOOTER */
 

@@ -28,7 +28,15 @@
 <div class="header">
 	<div class="wrap">
 		
-		<h1>CUNY J-Camp</h1>
+		<div class="logo"><h1>CUNY<span>J-Camp</span></h1></div>
+		<div class="navbar">
+			<nav>
+				<a href="#">Foobar</a>
+				<a href="#">Meow Mix</a>
+				<a href="#">Lettuce</a>
+				<a href="#">Cabbage and Kale</a>
+			</nav>
+		</div>
 		
 	</div><!-- END .wrap -->
 </div><!-- END .header -->

@@ -1,4 +1,6 @@
 <div class="footer">
+	
+	<div class="dent"></div>
 
 	<div class="wrap">
 		
