@@ -28,5 +28,7 @@
 <div class="header">
 	<div class="wrap">
 		
+		<h1>CUNY J-Camp</h1>
+		
 	</div><!-- END .wrap -->
 </div><!-- END .header -->

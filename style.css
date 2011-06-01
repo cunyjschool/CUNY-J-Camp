@@ -48,3 +48,8 @@ h4 {
 .clear-right {
 	clear: right;
 }
+
+.wrap {
+    margin:0 auto;
+    width:960px;
+}

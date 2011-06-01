@@ -1,6 +1,8 @@
 <div class="footer">
 
 	<div class="wrap">
+		
+		Yar, here be the footer!
 
 	</div><!-- END .wrap -->
 	
