@@ -9,8 +9,71 @@ License: GNU General Public License
 License URI: license.txt
 */
 
+/* FONT TESTS */
+html {
+    background: #f7f7f7 url('http://www.digitalpodge.co.uk/2009/assets/images/page/bg.jpg') repeat;
+}
+
+body{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    line-height:22px;
+    font-size:12px;
+    color:#000;
+    min-width:960px;
+}
+
+.header {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color:#637b6e;
+    font-size:40px;
+    padding:20px 0 30px;
+}
+
+.event-title a {
+    font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
+    color:#637b6e;
+    font-size:22px;
+    line-height:25px;
+}
+
+.event-byline {
+    color:#a3b6ac;
+    font-size:12px;
+    line-height:22px;
+    text-transform: uppercase;
+}
+
+.event-category {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    background:#637b6e;
+}
+
+.event-date {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+    line-height:36px;
+    font-size:30px;
+}
+
+.footer {
+/*    background: -moz-linear-gradient(center top , #a3b6ac, #637b6e) repeat scroll 0 0;*/
+    color:#fff;
+    background:#000;
+    height:220px;
+}
+
 h1, h2, h3, h4, html, body, p {
 	margin:0;
+}
+
+a {
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
 }
 
 .align-center {
@@ -42,22 +105,11 @@ h1, h2, h3, h4, html, body, p {
     padding:10px;
 }
 
-body {
-    background:#eee;
-    min-width:960px;
-}
-
 /* HEADER */
-.header h1 {
-    font-size:50px;
-}
 
 
 /* FOOTER */
-.footer {
-    background:#000000;
-    color:#ffffff;
-}
+
 
 /* HOME */
 .event-box {
@@ -70,6 +122,10 @@ body {
     margin:0 10px 10px 0;
 }
 
+.event-box .event-thumb a {
+    color:#fff;
+}
+
 .event-box.double-wide {
     width:518px;
 }
@@ -77,43 +133,34 @@ body {
     width:518px;
 }
 
-.event-box p, .event-box h2 {
-    padding:5px 10px;
-}
-
 .event-box .event-thumb {
     height:160px;
     overflow:hidden;
     position:relative;
+    color:#fff;
+}
+
+.event-box .event-excerpt {
+    padding:10px;
 }
 
 .event-box .event-category {
-    background:#000000;
-    color:#fff;
-    padding:5px 8px 3px;
+    padding:5px 8px;
     position:absolute;
     display:block;
     text-align:right;
     top:0;
     right:0;
-    text-transform:uppercase;
-    font-size:20px;
+    -moz-box-shadow:-2px 2px 5px #444;
 }
 
 .event-box .event-date {
-    color:#fff;
     padding:5px 8px 3px;
     position:absolute;
     display:block;
     margin-top:40px;
-    width:100px;
+    width:75px;
     text-align:right;
     top:0;
     right:0;
-    text-transform:uppercase;
-    font-size:35px;
-}
-
-.event-box img {
-    width:250px;
 }
