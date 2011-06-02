@@ -22,81 +22,6 @@ body{
     min-width:960px;
 }
 
-.header .logo{
-    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
-    color:#a3b6ac;
-    font-size:50px;
-    line-height:80px;
-    border-bottom:1px solid #a3b6ac;
-    height:120px;
-    text-transform: uppercase;
-    letter-spacing:-5px;
-}
-
-.header .logo span{
-    color:#637b6e;
-}
-
-.header .navbar a{
-    color:#a01018;
-    font-size:20px;
-    height:20px;
-    padding:10px;
-    display:inline-block;
-    border-right:1px solid #a3b6ac;
-    font-family: Gill Sans, Verdana;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
-
-.header .navbar {
-    border-top:1px solid #a3b6ac;
-    margin-top:3px;
-}
-
-.event-title a {
-    font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
-    color:#637b6e;
-    font-size:22px;
-}
-
-.event-byline {
-    color:#a3b6ac;
-    font-size:10px;
-    line-height:15px;
-    text-transform: uppercase;
-    border-top:1px dotted #a3b6ac;
-    margin:2px 0 5px 0;
-}
-
-.event-category {
-    font-family: Gill Sans, Verdana;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-    background:#637b6e;
-}
-
-.event-date {
-    font-family: Gill Sans, Verdana;
-	text-transform: uppercase;
-    line-height:36px;
-    font-size:30px;
-}
-
-.footer {
-    color:#fff;
-    background: url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-leftbg.png') repeat-y scroll 0 0 #2C2C2C;
-    height:220px;
-}
-
-.dent {
-    background:url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-top.png') repeat-x;
-    height:4px;
-    display:block;
-    margin:0;
-    padding:0;
-}
-
 h1, h2, h3, h4, html, body, p {
 	margin:0;
 }
@@ -139,30 +64,69 @@ a:hover {
 }
 
 /* HEADER */
+.header .logo {
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
+    color:#a3b6ac;
+    font-size:50px;
+    line-height:80px;
+    border-bottom:1px solid #a3b6ac;
+    height:120px;
+    text-transform: uppercase;
+    letter-spacing:-5px;
+}
+
+.header .logo span {
+    color:#637b6e;
+}
+
+.header .navbar {
+    border-top:1px solid #a3b6ac;
+    margin-top:3px;
+}
+
+.header .navbar a {
+    color:#a01018;
+    font-size:20px;
+    height:20px;
+    padding:10px;
+    display:inline-block;
+    border-right:1px solid #a3b6ac;
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
 
 /* FOOTER */
+.footer {
+    color:#fff;
+    background: url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-leftbg.png') repeat-y scroll 0 0 #2C2C2C;
+    height:220px;
+}
 
+.dent {
+    background:url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-top.png') repeat-x;
+    height:4px;
+    display:block;
+    margin:0;
+    padding:0;
+}
 
 /* HOME */
 .event-box {
-    float:left;
-    width:250px;
+    width:220px;
     height:350px;
     padding:3px;
     border:1px solid #ccc;
     background:#fff;
-    margin:0 10px 10px 0;
-}
-
-.event-box .event-thumb a {
-    color:#fff;
+    margin:0 8px 8px 0;
 }
 
 .event-box.double-wide {
-    width:518px;
+    width:456px;
 }
-.event-box.double-wide img {
-    width:518px;
+
+.event-box.double-wide .event-thumb img {
+    width:100%;
 }
 
 .event-box .event-thumb {
@@ -172,11 +136,11 @@ a:hover {
     color:#fff;
 }
 
-.event-box .event-excerpt {
-    padding:10px;
-}
-
-.event-box .event-category {
+.event-box .event-thumb .event-category {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    background:#637b6e;
     padding:5px 8px;
     position:absolute;
     display:block;
@@ -186,7 +150,15 @@ a:hover {
     -moz-box-shadow:-2px 2px 5px #444;
 }
 
-.event-box .event-date {
+.event-box .event-thumb .event-category a {
+    color:#fff;
+}
+
+.event-box .event-thumb .event-date {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+    line-height:36px;
+    font-size:30px;
     padding:5px 8px 3px;
     position:absolute;
     display:block;
@@ -195,4 +167,23 @@ a:hover {
     text-align:right;
     top:0;
     right:0;
+}
+
+.event-box .event-excerpt {
+    padding:10px;
+}
+
+.event-box .event-excerpt .event-title a {
+    font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
+    color:#637b6e;
+    font-size:22px;
+}
+
+.event-box .event-excerpt .event-byline {
+    color:#a3b6ac;
+    font-size:10px;
+    line-height:15px;
+    text-transform: uppercase;
+    border-top:1px dotted #a3b6ac;
+    margin:2px 0 5px 0;
 }

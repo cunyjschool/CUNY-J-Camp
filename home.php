@@ -4,7 +4,7 @@
 	
 	<div class="wrap">
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -17,7 +17,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box double-wide">
+		<div class="float-left event-box double-wide">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -30,7 +30,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -43,7 +43,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -56,7 +56,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -69,7 +69,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -82,7 +82,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -95,7 +95,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
@@ -108,7 +108,7 @@
 			</div>
 		</div><!-- END .event-box -->
 		
-		<div class="event-box">
+		<div class="float-left event-box">
 			<div class="event-thumb">
 				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
 				<div class="event-category"><a href="#">cats</a></div>
