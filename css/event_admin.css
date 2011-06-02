@@ -1,3 +1,7 @@
+#cunyjcamp-event .clear-both {
+	clear: both;
+}
+
 #cunyjcamp-event .inner {
 	padding-top: 5px;
 	padding-left: 15px;
@@ -5,20 +9,48 @@
 	padding-bottom: 5px;
 }
 
+#cunyjcamp-event .inner h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 15px;
+}
+
+#cunyjcamp-event .option-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#cunyjcamp-event .required-selector {
+	float: left;
+}
+
 #cunyjcamp-event .selectlist-list {
 	list-style: none;
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
+	margin-left: 200px	;
 }
 
 #cunyjcamp-event .selectlist-item {
-	background: #fff url(../img/icons/x_s14.png) no-repeat right center;
 	border-left: solid 1px #eee;
 	border-top: solid 1px #eee;
 	border-right: solid 2px #ccc;
 	border-bottom: solid 2px #ccc;
 	cursor: pointer;
-	padding: 0.2em 0.3em;
-	margin: 1px 0;
+	padding-left: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+	margin-right: 10px;
 	display: inline-block !important;
+	background: url(../img/backgrounds/white-grad.png) repeat-x scroll left top #F2F2F2;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+#cunyjcamp-event .selectlist-item:hover {
+	background-color: #FF0000;
+	background-image: none;
+	color: #FFFFFF;
+	text-shadow: none;
 }

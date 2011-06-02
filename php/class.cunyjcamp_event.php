@@ -102,7 +102,6 @@ class cunyjcamp_event
 			'fields' => 'ids',
 		);
 		$required_equipment_terms = wp_get_object_terms( $post->ID, 'cunyjcamp_equipment', $args );
-		var_dump( $required_equipment_terms );
 		
 		?>
 		
@@ -121,14 +120,14 @@ class cunyjcamp_event
 				<p>End time <span class="required">*</span>: tk</p>
 				
 			</div>
-			
-			<div class="requirements">
 				
-				<h4>Requirements</h4>
 				
 				<p>Prerequisite Knowledge: tk</p>
 				
-				<div class="required-equipment-wrap option-item hide-if-no-js"><label for="cunyjcamp-required-equipment">Equipment:</label>
+			<div class="required-equipment-wrap option-item hide-if-no-js">
+			
+			<h4>Required Equipment</h4>
+					
 				<?php
 					$args = array(
 						'orderby' => 'name',
@@ -138,7 +137,7 @@ class cunyjcamp_event
 
 				?>
 				<?php if ( count( $equipment_terms ) ): ?>
-				<select id="cunyjcamp-required-equipment" class="required-selector" multiple="multiple" name="cunyjcamp-required-equipment[]" title="-- Please select --">
+				<select id="cunyjcamp-required-equipment" class="required-selector" multiple="multiple" name="cunyjcamp-required-equipment[]" title="-- Select equipment --">
 				<?php foreach ( $equipment_terms as $equipment_term ): ?>
 					<option value="<?php echo $equipment_term->slug; ?>"<?php if ( in_array( $equipment_term->term_id, $required_equipment_terms ) ) { echo ' selected="selected"'; } ?>><?php echo $equipment_term->name; ?></option>
 				<?php endforeach; ?>
@@ -146,9 +145,11 @@ class cunyjcamp_event
 				<?php else: ?>
 				<div class="message info">You'll need to add equipment before you can require it to be used.</div>
 				<?php endif; ?>
-				</div><!-- END .required-equipment-wrap -->
 				
-			</div>
+				<div class="clear-both"></div>
+			
+			</div><!-- END .required-equipment-wrap -->
+				
 			
 			<div class="location">
 				
