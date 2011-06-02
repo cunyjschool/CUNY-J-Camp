@@ -105,7 +105,7 @@ class cunyjcamp
 				'name' => 'Instructors',
 				'singular_name' => 'Instructor',
 				'search_items' =>  'Search Instructors',
-				'popular_items' => 'Popular Contexts',
+				'popular_items' => 'Popular Instructors',
 				'all_items' => 'All Instructors',
 				'parent_item' => 'Parent Instructor',
 				'parent_item_colon' => 'Parent Instructor:',
@@ -129,7 +129,40 @@ class cunyjcamp
 			'cunyjcamp_event',
 		);
 		register_taxonomy( 'cunyjcamp_instructors', $post_types, $args );
-		$this->theme_taxonomies[] = 'cunyjcamp_instructors';	
+		$this->theme_taxonomies[] = 'cunyjcamp_instructors';
+		
+		// Register the Equipment taxonomy
+		$args = array(
+			'label' => 'Equipment',
+			'labels' => array(
+				'name' => 'Equipment',
+				'singular_name' => 'Equipment',
+				'search_items' =>  'Search Equipment',
+				'popular_items' => 'Popular Equipment',
+				'all_items' => 'All Equipment',
+				'parent_item' => 'Parent Equipment',
+				'parent_item_colon' => 'Parent Equipment:',
+				'edit_item' => 'Edit Equipment', 
+				'update_item' => 'Update Equipment',
+				'add_new_item' => 'Add New Equipment',
+				'new_item_name' => 'New Equipment',
+				'separate_items_with_commas' => 'Separate equipment with commas',
+				'add_or_remove_items' => 'Add or remove equipment',
+				'choose_from_most_used' => 'Choose from the most common equipment',
+				'menu_name' => 'Equipment',
+			),
+			'show_tagcloud' => false,		
+			'rewrite' => array(
+				'slug' => 'equipment',
+				'hierarchical' => true,
+			),
+		);
+
+		$post_types = array(
+			'cunyjcamp_event',
+		);
+		register_taxonomy( 'cunyjcamp_equipment', $post_types, $args );
+		$this->theme_taxonomies[] = 'cunyjcamp_equipment';
 		
 	} // END create_taxonomies()
 	
@@ -138,7 +171,9 @@ class cunyjcamp
 	 */
 	function remove_metaboxes() {
 		
+		// Remove taxonomy metaboxes
 		remove_meta_box( 'tagsdiv-cunyjcamp_instructors', 'cunyjcamp_event', 'side' );
+		remove_meta_box( 'tagsdiv-cunyjcamp_equipment', 'cunyjcamp_event', 'side' );	
 		
 	} // END remove_metaboxes()
 	
