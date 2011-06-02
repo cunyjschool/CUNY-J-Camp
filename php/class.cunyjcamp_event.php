@@ -75,7 +75,8 @@ class cunyjcamp_event
 		
 		// Only load scripts and styles on relevant pages in the WordPress admin
 		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'page.php' ) {
-			wp_enqueue_script( 'cunyjcamp_event_admin_js', get_bloginfo( 'template_url' ) . '/js/event_admin.js', array( 'jquery' ), CUNYJCAMP_VERSION, true );
+			wp_enqueue_script( 'jquery_selectlist', get_bloginfo( 'template_url' ) . '/js/jquery.selectlist.js', array( 'jquery' ), CUNYJCAMP_VERSION );
+			wp_enqueue_script( 'cunyjcamp_event_admin_js', get_bloginfo( 'template_url' ) . '/js/event_admin.js', array( 'jquery', 'jquery_selectlist' ), CUNYJCAMP_VERSION );			
 			wp_enqueue_style( 'cunyjcamp_event_admin_css', get_bloginfo( 'template_url' ) . '/css/event_admin.css', false, CUNYJCAMP_VERSION, 'all' );
 		}
 		
@@ -97,7 +98,11 @@ class cunyjcamp_event
 	function post_meta_box() {
 		global $post;
 		
-		// @todo build the meta box
+		$args = array(
+			'fields' => 'ids',
+		);
+		$required_equipment_terms = wp_get_object_terms( $post->ID, 'cunyjcamp_equipment', $args );
+		var_dump( $required_equipment_terms );
 		
 		?>
 		
@@ -123,7 +128,25 @@ class cunyjcamp_event
 				
 				<p>Prerequisite Knowledge: tk</p>
 				
-				<p>Equipment: tk</p>
+				<div class="required-equipment-wrap option-item hide-if-no-js"><label for="cunyjcamp-required-equipment">Equipment:</label>
+				<?php
+					$args = array(
+						'orderby' => 'name',
+						'hide_empty' => false,
+					);
+					$equipment_terms = get_terms( 'cunyjcamp_equipment', $args );
+
+				?>
+				<?php if ( count( $equipment_terms ) ): ?>
+				<select id="cunyjcamp-required-equipment" class="required-selector" multiple="multiple" name="cunyjcamp-required-equipment[]" title="-- Please select --">
+				<?php foreach ( $equipment_terms as $equipment_term ): ?>
+					<option value="<?php echo $equipment_term->slug; ?>"<?php if ( in_array( $equipment_term->term_id, $required_equipment_terms ) ) { echo ' selected="selected"'; } ?>><?php echo $equipment_term->name; ?></option>
+				<?php endforeach; ?>
+				</select>
+				<?php else: ?>
+				<div class="message info">You'll need to add equipment before you can require it to be used.</div>
+				<?php endif; ?>
+				</div><!-- END .required-equipment-wrap -->
 				
 			</div>
 			
@@ -133,7 +156,9 @@ class cunyjcamp_event
 				
 			</div>
 			
-		</div>
+			<input type="hidden" id="cunyjcamp-event-nonce" name="cunyjcamp-event-nonce" value="<?php echo wp_create_nonce('cunyjcamp-event-nonce'); ?>" />
+			
+		</div><!-- END .inner -->
 		
 		<?php
 		
@@ -143,13 +168,16 @@ class cunyjcamp_event
 	 * save_post_meta_box()
 	 */
 	function save_post_meta_box( $post_id ) {
-		global $post;
+		global $post, $cunyjcamp;
 		
-		if ( !wp_verify_nonce( $_POST['cunyj_events-nonce'], 'cunyj_events-nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['cunyjcamp-event-nonce'], 'cunyjcamp-event-nonce' ) ) {
 			return $post_id;  
 		}
 		
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
+			
+			$required_equipment_terms = $_POST['cunyjcamp-required-equipment'];
+			wp_set_object_terms( $post_id, $required_equipment_terms, 'cunyjcamp_equipment' );
 			
 			// @todo Save the data
 		}		

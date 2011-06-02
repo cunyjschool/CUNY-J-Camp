@@ -4,3 +4,21 @@
 	padding-right: 15px;
 	padding-bottom: 5px;
 }
+
+#cunyjcamp-event .selectlist-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#cunyjcamp-event .selectlist-item {
+	background: #fff url(../img/icons/x_s14.png) no-repeat right center;
+	border-left: solid 1px #eee;
+	border-top: solid 1px #eee;
+	border-right: solid 2px #ccc;
+	border-bottom: solid 2px #ccc;
+	cursor: pointer;
+	padding: 0.2em 0.3em;
+	margin: 1px 0;
+	display: inline-block !important;
+}
