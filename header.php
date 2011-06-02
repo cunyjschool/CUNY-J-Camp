@@ -29,7 +29,7 @@
 	<div class="wrap">
 		
 		<div class="logo-and-tagline">
-			<div class="logo float-left"><h1>CUNY<span>J-Camp</span></h1></div>
+			<div class="logo float-left"><h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>J-Camp</a></h1></div>
 			<div class="tagline float-left">World Class Multimedia and Journalism Training at the CUNY Graduate School of Journalism</div>
 			<div class="clear-both"></div>
 		</div>

@@ -29,6 +29,7 @@ h1, h2, h3, h4, ul, ol, html, body {
 
 a {
     text-decoration:none;
+    color:#637b6e;
 }
 
 a:hover {
@@ -115,6 +116,10 @@ border-color: #777777;
     letter-spacing:-5px;
 }
 
+.header .logo-and-tagline .logo a:hover {
+    text-decoration:none;
+}
+
 .header .logo-and-tagline .tagline {
     width:250px;
     margin-left:40px;
@@ -126,7 +131,7 @@ border-color: #777777;
 }
 
 .header .logo-and-tagline .logo span {
-    color:#637b6e;
+    color:#a3b6ac;
 }
 
 .header .navbar {
