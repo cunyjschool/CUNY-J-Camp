@@ -11,7 +11,7 @@ License URI: license.txt
 
 /* FONT TESTS */
 html {
-    background: #f7f7f7 url('http://www.digitalpodge.co.uk/2009/assets/images/page/bg.jpg') repeat;
+    background: #f7f7f7 url("images/bg.jpg") repeat;
 }
 
 body{
@@ -19,11 +19,12 @@ body{
     line-height:22px;
     font-size:12px;
     color:#000;
-    min-width:960px;
+    min-width:1008px;
 }
 
-h1, h2, h3, h4, html, body, p {
+h1, h2, h3, h4, ul, ol, html, body {
 	margin:0;
+	padding:0;
 }
 
 a {
@@ -58,12 +59,48 @@ a:hover {
 	clear: right;
 }
 
+.bold {
+    font-weight:bold;
+}
+
 .wrap {
     margin:20px;
     padding:10px;
 }
 
+button {
+    cursor: pointer;
+    outline: none 0;
+    -moz-outline-style: none 0;
+    -moz-border-radius: 6px;
+    background: transparent url("images/button.png") repeat-x top;
+    color: #222;
+    display: inline-block;
+    font-size: 13px;
+    padding:13px;
+    border: 1px solid #aaaaaa; 
+    margin:10px 10px 0 0;
+}
+
+button:hover {
+    border-color: #777777;
+    color: #333333;
+    text-decoration: none; 
+}
+
+button:active {
+background-position: bottom;
+border-color: #777777; 
+}
+
 /* HEADER */
+/*.header {
+    background: #fff;
+    margin-top:-28px;
+    padding-top:20px;
+    border-bottom:1px solid #ccc;
+}*/
+
 .header .logo-and-tagline {
     border-bottom:1px solid #a3b6ac;
 }
@@ -112,16 +149,13 @@ a:hover {
 /* FOOTER */
 .footer {
     color:#fff;
-    background: url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-leftbg.png') repeat-y scroll 0 0 #2C2C2C;
+    background: url("images/footer-leftbg.png") repeat-y scroll 0 0 #2C2C2C;
     height:220px;
 }
 
 .dent {
-    background:url('http://www.elegantthemes.com/preview/TheStyle/wp-content/themes/TheStyle/images/footer-top.png') repeat-x;
+    background:url("images/footer-top.png") repeat-x;
     height:4px;
-    display:block;
-    margin:0;
-    padding:0;
 }
 
 /* HOME */
@@ -186,13 +220,17 @@ a:hover {
     padding:10px;
 }
 
-.event-box .event-excerpt .event-title a {
+.event-box .event-excerpt p {
+    margin:0;
+}
+
+.event-box .event-excerpt .event-title a, .content .entry h3 {
     font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
     color:#637b6e;
     font-size:22px;
 }
 
-.event-box .event-excerpt .event-byline {
+.event-box .event-excerpt .event-byline, .content .entry .event-byline {
     color:#a3b6ac;
     font-size:10px;
     line-height:15px;
@@ -202,3 +240,51 @@ a:hover {
 }
 
 /* SINGLE EVENT */
+.sidebar {
+    width:350px;
+    background:#fff;
+    border:1px solid #a3b6ac;
+    padding:10px 10px 10px 50px;
+    margin:0 0 20px -40px;
+    -moz-box-shadow:5px 5px 5px #ccc;
+}
+
+.sidebar img {
+    width:100%;
+}
+
+.entry {
+    width:500px;
+    margin:20px 0 0 40px;
+}
+
+.entry img {
+    width:250px;
+    float:left;
+    margin:10px 20px 0 0;
+    border:1px solid #a3b6ac;
+}
+
+.sidebar .event-details {
+    padding:10px;
+}
+
+.sidebar .event-details .heading {
+    font-family: Gill Sans, Verdana;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.sidebar .event-details ul {
+    padding-left:30px;
+}
+
+.sidebar .event-details ul li {
+    margin:15px 0;
+    color:#637b6e;
+}
+
+.sidebar .event-details ul li p {
+    margin:0;
+    color:#222;
+}

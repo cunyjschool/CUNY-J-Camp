@@ -1,13 +1,5 @@
-<?php get_header(); ?>
+<div class="content">
 
-<div class="main">
-	
-	<div class="wrap">
-		
-		
-				
-	</div><!-- END .wrap -->
+    Foobar!
 
-</div><!-- END .main -->
-
-<?php get_footer(); ?>
+</div><!-- END .content -->
