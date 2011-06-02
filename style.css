@@ -64,18 +64,31 @@ a:hover {
 }
 
 /* HEADER */
-.header .logo {
+.header .logo-and-tagline {
+    border-bottom:1px solid #a3b6ac;
+}
+
+.header .logo-and-tagline .logo {
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
     color:#a3b6ac;
     font-size:50px;
     line-height:80px;
-    border-bottom:1px solid #a3b6ac;
     height:120px;
     text-transform: uppercase;
     letter-spacing:-5px;
 }
 
-.header .logo span {
+.header .logo-and-tagline .tagline {
+    width:250px;
+    margin-left:40px;
+    line-height:29px;
+    text-transform:uppercase;
+    font-family: Gill Sans, Verdana;
+    letter-spacing: 1px;
+    color:#a3b6ac;
+}
+
+.header .logo-and-tagline .logo span {
     color:#637b6e;
 }
 

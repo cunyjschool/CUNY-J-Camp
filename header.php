@@ -28,7 +28,11 @@
 <div class="header">
 	<div class="wrap">
 		
-		<div class="logo"><h1>CUNY<span>J-Camp</span></h1></div>
+		<div class="logo-and-tagline">
+			<div class="logo float-left"><h1>CUNY<span>J-Camp</span></h1></div>
+			<div class="tagline float-left">World Class Multimedia and Journalism Training at the CUNY Graduate School of Journalism</div>
+			<div class="clear-both"></div>
+		</div>
 		<div class="navbar">
 			<nav>
 				<a href="#">Foobar</a>
