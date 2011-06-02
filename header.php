@@ -30,17 +30,18 @@
 		
 		<div class="logo-and-tagline">
 			<div class="logo float-left"><h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>J-Camp</a></h1></div>
-			<div class="tagline float-left">World Class Multimedia and Journalism Training at the CUNY Graduate School of Journalism</div>
+			<div class="tagline float-left"><?php bloginfo('description'); ?></div>
 			<div class="clear-both"></div>
 		</div>
-		<div class="navbar">
-			<nav>
-				<a href="#">Foobar</a>
-				<a href="#">Meow Mix</a>
-				<a href="#">Lettuce</a>
-				<a href="#">Cabbage and Kale</a>
-			</nav>
-		</div>
+		<?php
+    		$args = array(
+    			'theme_location' => 'header-menu',
+    			'container_class' => 'menu-header-menu-container',
+    			'menu_id' => 'menu-header-menu',
+    		);
+    		wp_nav_menu( $args ); 
+    	?>
+    	<div class="clear-both"></div>
 		
 	</div><!-- END .wrap -->
 </div><!-- END .header -->
