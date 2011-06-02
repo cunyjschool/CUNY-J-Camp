@@ -254,14 +254,17 @@ border-color: #777777;
 .sidebar {
     width:350px;
     background:#fff;
-    border:1px solid #a3b6ac;
+    border:1px solid #222;
     padding:10px 10px 10px 50px;
-    margin:0 0 20px -40px;
+    margin:100px 0 20px -40px;
     -moz-box-shadow:5px 5px 5px #ccc;
 }
 
 .sidebar img {
     width:100%;
+    margin:-35% 0 20px 0;
+    border:1px solid #222;
+    -moz-box-shadow:5px 5px 5px #ccc;
 }
 
 .entry {
@@ -292,7 +295,7 @@ border-color: #777777;
 
 .sidebar .event-details ul li {
     margin:15px 0;
-    color:#637b6e;
+    color:#a01018;
 }
 
 .sidebar .event-details ul li p {

@@ -11,6 +11,8 @@
     	        
     	        <div class="event-details">
     	            
+    	            <img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
+    	            
     	            <ul>
     	                <li class="date">
     	                    <div class="heading">Date:</div>
@@ -41,8 +43,6 @@
 				<h3><?php the_title() ?></h3>
 				
 				<div class="event-byline">Posted by Ceiling Cat</div>
-				
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
     	        
     	        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
     	        
