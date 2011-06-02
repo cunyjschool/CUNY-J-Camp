@@ -159,9 +159,15 @@ border-color: #777777;
 
 /* FOOTER */
 .footer {
-    color:#fff;
+    color:#f7f7f7;
     background: url("images/footer-leftbg.png") repeat-y scroll 0 0 #2C2C2C;
-    height:220px;
+    padding-bottom:20px;
+    font-size:11px;
+}
+
+.footer a {
+    color:#efefef;
+    text-decoration:underline;
 }
 
 .dent {

@@ -2,9 +2,10 @@
 	
 	<div class="dent"></div>
 
-	<div class="wrap">
+	<div class="wrap align-center">
 		
-		Yar, here be the footer!
+		<div>&copy;2011 CUNY J-Camp. All Rights Reserved.</div>
+		<div><a href="http://journalism.cuny.edu">CUNY Graduate School of Journalism</a></div>
 
 	</div><!-- END .wrap -->
 	
