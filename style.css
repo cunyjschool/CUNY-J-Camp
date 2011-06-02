@@ -302,3 +302,47 @@ border-color: #777777;
     margin:0;
     color:#222;
 }
+
+/* COMMENTS */
+.comments {
+    margin-top:40px;
+    color:#222;
+}
+
+.comment {
+    margin-bottom:40px;
+    border-bottom:1px dotted #a3b6ac;
+}
+
+.comment h4 {
+    color:#637b6e;
+    font-size:12px;
+    line-height:20px;
+    text-transform: uppercase;
+    border-bottom:1px solid #a3b6ac;
+    margin-top:20px;
+    padding:5px 10px;
+    font-weight:normal;
+}
+
+.comment .comment-meta {
+    border-top:1px solid #a3b6ac;
+    margin-top:3px;
+}
+
+.comment .comment-meta span {
+    border-right:1px solid #a3b6ac;
+    padding:2px 10px;
+    color:#a3b6ac;
+    display:inline-block;
+    font-size:11px;
+}
+
+.comment p {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+textarea#comment {
+    width:100%;
+}
