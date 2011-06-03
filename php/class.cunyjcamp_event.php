@@ -76,8 +76,11 @@ class cunyjcamp_event
 		// Only load scripts and styles on relevant pages in the WordPress admin
 		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'page.php' ) {
 			wp_enqueue_script( 'jquery_selectlist', get_bloginfo( 'template_url' ) . '/js/jquery.selectlist.js', array( 'jquery' ), CUNYJCAMP_VERSION );
+			wp_enqueue_script( 'cunyjcamp_jquery_ui_custom_js', get_bloginfo( 'template_url' ) . '/js/jquery-ui-1.8.13.custom.min.js', array( 'jquery', 'jquery-ui-core' ), CUNYJCAMP_VERSION );
+			wp_enqueue_script( 'cunyjcamp_jquery_timepicker_js', get_bloginfo( 'template_url' ) . '/js/jquery-ui-timepicker.0.9.5.js', array( 'jquery', 'jquery-ui-core', 'cunyjcamp_jquery_ui_custom_js' ), CUNYJCAMP_VERSION );
 			wp_enqueue_script( 'cunyjcamp_event_admin_js', get_bloginfo( 'template_url' ) . '/js/event_admin.js', array( 'jquery', 'jquery_selectlist' ), CUNYJCAMP_VERSION );			
 			wp_enqueue_style( 'cunyjcamp_event_admin_css', get_bloginfo( 'template_url' ) . '/css/event_admin.css', false, CUNYJCAMP_VERSION, 'all' );
+			wp_enqueue_style( 'cunyjcamp_jquery_ui_custom_css', get_bloginfo( 'template_url' ) . '/css/jquery-ui-1.8.13.custom.css', false, CUNYJCAMP_VERSION, 'all' );			
 		}
 		
 	} // END add_admin_scripts()
@@ -98,6 +101,19 @@ class cunyjcamp_event
 	function post_meta_box() {
 		global $post;
 		
+		$date_time_format = 'm/d/y g:i A';
+		$start_timestamp = get_post_meta( $post->ID, '_cunyjcamp_start_timestamp', true );
+		if ( $start_timestamp )
+			$start_date_time = date( $date_time_format, $start_timestamp );
+		else
+			$start_date_time = '';
+			
+		$end_timestamp = get_post_meta( $post->ID, '_cunyjcamp_end_timestamp', true );
+		if ( $end_timestamp )
+			$end_date_time = date( $date_time_format, $end_timestamp );
+		else
+			$end_date_time = '';
+		
 		$args = array(
 			'fields' => 'ids',
 		);
@@ -107,22 +123,31 @@ class cunyjcamp_event
 		
 		<div class="inner">
 			
-			<div class="date-time">
+			<div class="date-time-wrap option-item hide-if-no-js">
 				
 				<h4>Date &amp; Time</h4>
 				
-				<p>Start date <span class="required">*</span>: tk</p>
+				<div class="float-left">
+				<label for="cunyjcamp-start-date-time">Please specify a starting date &amp; time <span class="required">*</span></label>
+				<input id="cunyjcamp-start-date-time" name="cunyjcamp-start-date-time" class="cunyjcamp-date-time-picker" size="25" value="<?php echo $start_date_time; ?>" />
+				</div>
 				
-				<p>Start time <span class="required">*</span>: tk</p>
+				<div>
+				<label for="cunyjcamp-end-date-time">Please specify an ending date &amp; time <span class="required">*</span></label>
+				<input id="cunyjcamp-end-date-time" name="cunyjcamp-end-date-time" class="cunyjcamp-date-time-picker" size="25" value="<?php echo $end_date_time; ?>" />
+				</div>
 				
-				<p>End date <span class="required">*</span>: tk</p>
-				
-				<p>End time <span class="required">*</span>: tk</p>
+				<div class="clear-both"></div>
 				
 			</div>
+			
+			<div class="prerequisite-knowledge-wrap option-item hide-if-no-js">
+
+				<h4>Prerequisite Knowledge</h4>
 				
+				tk
 				
-				<p>Prerequisite Knowledge: tk</p>
+			</div>
 				
 			<div class="required-equipment-wrap option-item hide-if-no-js">
 			
@@ -177,10 +202,16 @@ class cunyjcamp_event
 		
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
 			
-			$required_equipment_terms = $_POST['cunyjcamp-required-equipment'];
-			wp_set_object_terms( $post_id, $required_equipment_terms, 'cunyjcamp_equipment' );
+			$start_timestamp = strtotime( $_POST['cunyjcamp-start-date-time'] );
+			update_post_meta( $post_id, '_cunyjcamp_start_timestamp', $start_timestamp );
 			
-			// @todo Save the data
+			$end_timestamp = strtotime( $_POST['cunyjcamp-end-date-time'] );
+			update_post_meta( $post_id, '_cunyjcamp_end_timestamp', $end_timestamp );			
+			
+			$required_equipment_terms = $_POST['cunyjcamp-required-equipment'];
+			wp_set_object_terms( $post_id, $required_equipment_terms, 'cunyjcamp_equipment' );			
+			
+		
 		}		
 		
 	} // END save_post_meta_box()

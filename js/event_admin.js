@@ -1,3 +1,17 @@
 jQuery(document).ready(function(){
-	jQuery('select#cunyjcamp-required-equipment').selectList({ sort: true });
+	
+	jQuery('select#cunyjcamp-required-equipment').selectList({
+		sort: true
+	});
+	
+	jQuery('input.cunyjcamp-date-time-picker').datetimepicker({
+		changeMonth: true,
+		changeYear: true,
+		ampm: true,
+		hour: 17,
+		timeFormat: 'h:mm TT',
+		hourGrid: 4,
+		minuteGrid: 10,
+	});
+	
 });

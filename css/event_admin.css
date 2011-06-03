@@ -1,3 +1,11 @@
+#cunyjcamp-event .float-left { 
+	float: left;
+}
+
+#cunyjcamp-event .float-right { 
+	float: right;
+}
+
 #cunyjcamp-event .clear-both {
 	clear: both;
 }
@@ -13,6 +21,18 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-bottom: 15px;
+}
+
+#cunyjcamp-event .inner .required {
+	color: #FF0000;
+}
+
+#cunyjcamp-event .inner label {
+	display: block;
+}
+
+#cunyjcamp-event .date-time-wrap div.float-left {
+	margin-right: 20px;
 }
 
 #cunyjcamp-event .option-item {
@@ -54,3 +74,10 @@
 	color: #FFFFFF;
 	text-shadow: none;
 }
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
