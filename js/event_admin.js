@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 	
-	jQuery('select#cunyjcamp-required-equipment').selectList({
+	jQuery('select.term-selector').selectList({
 		sort: true
 	});
 	

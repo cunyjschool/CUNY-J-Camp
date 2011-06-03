@@ -118,6 +118,7 @@ class cunyjcamp_event
 			'fields' => 'ids',
 		);
 		$required_equipment_terms = wp_get_object_terms( $post->ID, 'cunyjcamp_equipment', $args );
+		$event_instructors = wp_get_object_terms( $post->ID, 'cunyjcamp_instructors', $args );
 		
 		?>
 		
@@ -162,7 +163,7 @@ class cunyjcamp_event
 
 				?>
 				<?php if ( count( $equipment_terms ) ): ?>
-				<select id="cunyjcamp-required-equipment" class="required-selector" multiple="multiple" name="cunyjcamp-required-equipment[]" title="-- Select equipment --">
+				<select id="cunyjcamp-required-equipment" class="term-selector" multiple="multiple" name="cunyjcamp-required-equipment[]" title="-- Select equipment --">
 				<?php foreach ( $equipment_terms as $equipment_term ): ?>
 					<option value="<?php echo $equipment_term->slug; ?>"<?php if ( in_array( $equipment_term->term_id, $required_equipment_terms ) ) { echo ' selected="selected"'; } ?>><?php echo $equipment_term->name; ?></option>
 				<?php endforeach; ?>
@@ -174,11 +175,39 @@ class cunyjcamp_event
 				<div class="clear-both"></div>
 			
 			</div><!-- END .required-equipment-wrap -->
+			
+			<div class="instructors-wrap option-item hide-if-no-js">
+			
+			<h4>Instructor(s)</h4>
+					
+				<?php
+					$args = array(
+						'orderby' => 'name',
+						'hide_empty' => false,
+					);
+					$instructor_terms = get_terms( 'cunyjcamp_instructors', $args );
+
+				?>
+				<?php if ( count( $instructor_terms ) ): ?>
+				<select id="cunyjcamp-instructors" class="term-selector" multiple="multiple" name="cunyjcamp-instructors[]" title="-- Select instructor(s) --">
+				<?php foreach ( $instructor_terms as $instructor_term ): ?>
+					<option value="<?php echo $instructor_term->slug; ?>"<?php if ( in_array( $instructor_term->term_id, $event_instructors ) ) { echo ' selected="selected"'; } ?>><?php echo $instructor_term->name; ?></option>
+				<?php endforeach; ?>
+				</select>
+				<?php else: ?>
+				<div class="message info">You'll need to add instructors to the database before you can select them.</div>
+				<?php endif; ?>
+				
+				<div class="clear-both"></div>
+			
+			</div><!-- END .instructors-wrap -->
 				
 			
 			<div class="location">
 				
 				<h4>Location</h4>
+				
+				tk
 				
 			</div>
 			
@@ -211,8 +240,10 @@ class cunyjcamp_event
 			$required_equipment_terms = $_POST['cunyjcamp-required-equipment'];
 			wp_set_object_terms( $post_id, $required_equipment_terms, 'cunyjcamp_equipment' );			
 			
+			$event_instructors = $_POST['cunyjcamp-instructors'];
+			wp_set_object_terms( $post_id, $event_instructors, 'cunyjcamp_instructors' );
 		
-		}		
+		} // END if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) )
 		
 	} // END save_post_meta_box()
 	
