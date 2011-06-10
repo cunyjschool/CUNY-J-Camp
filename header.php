@@ -29,12 +29,17 @@
 	
 	<div class="wrap">
 		
-		<div class="logo-and-tagline">
+		<div class="branding">
+			
+			<a class="email-newsletter-signup float-right button primary-button" href="#">Sign up for updates</a>
+			
 			<div class="logo float-left">
 				<h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>JCamp</a></h1>
 			</div>
-			<div class="tagline float-left"><?php bloginfo('description'); ?></div>
+			<div class="tagline float-left"><?php bloginfo( 'description' ); ?></div>
+			
 			<div class="clear-both"></div>
+			
 		</div><!-- END .logo-and-tagline -->
 		
 		<?php
@@ -46,6 +51,7 @@
     		);
     		wp_nav_menu( $args ); 
     	?>
+
     	<div class="clear-both"></div>
 		
 	</div><!-- END .wrap -->

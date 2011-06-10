@@ -13,6 +13,7 @@ License URI: license.txt
 Color pallette options
 
 http://www.colourlovers.com/palette/1613268/citrico
+Background: #35515C
 */
 
 
@@ -23,15 +24,28 @@ body, html, p, ol, ul, blockquote, h1, h2, h3, h4, h5, h6 {
 
 body{
 	background-color: #35515C;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-    line-height:22px;
-    font-size:12px;
-    color:#000;
-    min-width:1008px;
+	font-family: "Droid Sans","Lucida Sans", "Verdana", "Arial", sans-serif;
+    line-height: 18px;
+    font-size: 12px;
+    color: #222222;
+    min-width: 1008px;
 }
 
 h1, h2, h3, h4 {
-	font-family: "Droid Sans","Lucida Sans", "Verdana",Arial,sans-serif;
+	font-family: "Droid Sans","Lucida Sans", "Verdana", "Arial", sans-serif;
+}
+
+h1 {
+	font-size: 48px;
+	line-height: 60px;
+}
+
+h2 {
+	
+}
+
+h3 {
+	
 }
 
 a {
@@ -101,34 +115,55 @@ button:active {
 	border-color: #777777; 
 }
 
-.header .logo-and-tagline {
+.button {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/**
+ * Section: .header
+ */
+
+.header .branding {
     border-bottom:1px solid #a3b6ac;
 }
 
-.header .logo-and-tagline .logo {
+.header .branding .logo {
     color: #FFFFFF;
-    font-size: 36px;
-    line-height: 48px;
-    height: 120px;
     text-transform: uppercase;
-    letter-spacing: -4px;
+    letter-spacing: -3px;
 }
 
-.header .logo-and-tagline .logo a:hover {
-    text-decoration:none;
+.header .branding .logo span {
+    color: #FFFFFF;
 }
 
-.header .logo-and-tagline .tagline {
-    width:250px;
-    margin-left:40px;
-    line-height:29px;
-    text-transform:uppercase;
-    letter-spacing: 1px;
-    color:#a3b6ac;
+.header .branding .logo a:hover {
+    text-decoration: none;
 }
 
-.header .logo-and-tagline .logo span {
-    color:#FFFFFF;
+.header .branding .tagline {
+    width: 400px;
+    margin-left: 40px;
+	font-size: 16px;
+	line-height: 22px;
+	color: #E4C44D;
+	padding-top: 8px;
+}
+
+.header a.email-newsletter-signup {
+	display: block;
+	background-color: #888888;
+	color: #FFFFFF;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.header a.email-newsletter-signup:hover {
+	
 }
 
 /* FOOTER */
