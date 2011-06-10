@@ -41,6 +41,7 @@ class cunyjcamp
 	function init() {
 
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'home-thumbnail', 220, 140, true );
 
 		if ( is_admin() ) {
 			add_action( 'admin_menu', array( &$this, 'add_admin_menu_items' ) );

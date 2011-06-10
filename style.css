@@ -65,6 +65,19 @@ a:hover {
     text-decoration:underline;
 }
 
+a img {
+	border: none;
+	text-decoration: none;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
 .align-center {
 	text-align: center;
 }
@@ -188,9 +201,12 @@ button:active {
 /* HOME */
 
 
-.events-table .event-box {
+.events-table a.event-box {
     width: 220px;
-	padding: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
     border: 1px solid #618291;
     background: #fff;
 	margin-top: 0;
@@ -199,52 +215,76 @@ button:active {
 	margin-bottom: 10px;
 	min-height: 350px;
 	box-shadow: 3px 3px 4px #34474F;
+	display: block;
+	position: relative;
 }
 
-.event-box .event-thumb .event-category {
-    font-family: Gill Sans, Verdana;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-    background:#637b6e;
-    padding:5px 8px;
-    position:absolute;
-    display:block;
-    text-align:right;
-    top:0;
-    right:0;
-    -moz-box-shadow:-2px 2px 5px #444;
+.events-table a.event-box:hover {
+	text-decoration: none;
+	border-color: #E4C44D;
 }
 
-.event-box .event-thumb .event-category a {
-    color:#fff;
+.events-table a.event-box img {
+	border: 1px solid #999999;
 }
 
-.event-box .event-thumb .event-date {
-	text-transform: uppercase;
-    line-height:36px;
-    font-size:30px;
-    padding:5px 8px 3px;
-    position:absolute;
-    display:block;
-    margin-top:40px;
-    width:75px;
-    text-align:right;
-    top:0;
-    right:0;
+.events-table a.event-box:hover img {
+	border-color: #E4C44D;
 }
 
-.events-table .event-box h4 {
+.events-table a.event-box .event-date {
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	color: #FFFFFF;
+	background-color: #D5624F;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 14px;
+	line-height: 20px;
 	text-transform: uppercase;
 }
 
-.event-box .event-excerpt .event-byline, .content .entry .event-byline {
-    color:#a3b6ac;
-    font-size:10px;
-    line-height:15px;
-    text-transform: uppercase;
-    border-top:1px dotted #a3b6ac;
-    margin:2px 0 5px 0;
+.events-table a.event-box:hover .event-date {
+	background-color: #E4C44D;
 }
+
+.events-table a.event-box h4 {
+	text-transform: uppercase;
+	padding-bottom: 1px;
+}
+
+.events-table a.event-box:hover h4 {
+	color: #E4C44D;
+}
+
+.events-table a.event-box .event-meta {
+	color: #BBBBBB;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.events-table a.event-box .event-meta span {
+	color: #666666;
+}
+
+.events-table a.event-box .learn-more {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.events-table a.event-box:hover .learn-more {
+	color: #E4C44D;
+}
+
+.events-table a.event-box .entry {
+	color: #222222;
+}
+
 
 /* SINGLE EVENT */
 
