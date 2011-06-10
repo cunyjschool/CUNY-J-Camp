@@ -4,125 +4,55 @@
 	
 	<div class="wrap">
 		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
+	<?php
+		$args = array(
+			'posts_per_page' => '-1',
+			'post_type' => 'cunyjcamp_event',
+			'orderby' => 'meta_value_num',
+			'order' => 'asc',		
+			'meta_key' => '_cunyjcamp_end_timestamp',
+		);
+		$all_events = new WP_Query( $args );
+	?>
+	
+	<?php if ( $all_events->have_posts() ) : ?>
+	
+	<div class="events-table">
+
+	<?php while ( $all_events->have_posts()) : $all_events->the_post(); ?>
+
+		<div class="post post-type-event event-box float-left">
+
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="featured-image">
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array( 220, 180 ) ); ?></a>
 			</div>
-			<div class="event-excerpt">
-				<h3 class="event-title"><a href="#">Here be the title</a></h3>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
+		<?php endif; ?>
 		
-		<div class="float-left event-box double-wide">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
+			<div class="inner">
+
+				<h4><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h4>
+
+				<div class="entry">
+					<?php the_excerpt(); ?>
+				</div>
+			
 			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here is a double wide!</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
-		<div class="float-left event-box">
-			<div class="event-thumb">
-				<img src="http://4.bp.blogspot.com/-gEEkwZRz26k/TatkHoEM6hI/AAAAAAAAFNg/l-ckU34vIW4/s400/ceiling%2Bcat.jpeg" />
-				<div class="event-category"><a href="#">cats</a></div>
-				<div class="event-date">Jan 12</div>
-			</div>
-			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
-				<div class="event-byline">Posted by Ceiling Cat</div>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
-			</div>
-		</div><!-- END .event-box -->
-		
+
+		</div><!-- END .post.event-box -->
+
+	<?php endwhile; ?>
+	
 		<div class="clear-both"></div>
-		
+
+		</div><!-- END .events-table -->
+
+	<?php else: ?>
+
+		<div class="message info">There aren't any upcoming events yet. Why don't you sign up for our email newsletter?</div>
+
+	<?php endif; ?>
+	
 	</div><!-- END .wrap -->
 
 </div><!-- END .main -->

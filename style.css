@@ -45,7 +45,15 @@ h2 {
 }
 
 h3 {
-	
+	font-size: 18px;
+	line-height: 24px;
+}
+
+h4 {
+	padding-top: 8px;
+	padding-bottom: 5px;
+	font-size: 16px;
+	line-height: 22px;
 }
 
 a {
@@ -88,6 +96,17 @@ a:hover {
 .wrap {
     margin:20px;
     padding:10px;
+}
+
+.message {
+	margin-top: 10px;
+	margin-bottom: 10px;	
+	border: 3px solid #618291;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	background-color: #FFFFFF;
 }
 
 button {
@@ -166,47 +185,20 @@ button:active {
 	
 }
 
-/* FOOTER */
-.footer {
-    color:#f7f7f7;
-    background: url("images/footer-leftbg.png") repeat-y scroll 0 0 #2C2C2C;
-    padding-bottom:20px;
-    font-size:11px;
-}
-
-.footer a {
-    color:#efefef;
-    text-decoration:underline;
-}
-
-.dent {
-    background:url("images/footer-top.png") repeat-x;
-    height:4px;
-}
-
 /* HOME */
-.event-box {
-    width:220px;
-    height:350px;
-    padding:3px;
-    border:1px solid #ccc;
-    background:#fff;
-    margin:0 8px 8px 0;
-}
 
-.event-box.double-wide {
-    width:456px;
-}
 
-.event-box.double-wide .event-thumb img {
-    width:100%;
-}
-
-.event-box .event-thumb {
-    height:160px;
-    overflow:hidden;
-    position:relative;
-    color:#fff;
+.events-table .event-box {
+    width: 220px;
+	padding: 10px;
+    border: 1px solid #618291;
+    background: #fff;
+	margin-top: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	min-height: 350px;
+	box-shadow: 3px 3px 4px #34474F;
 }
 
 .event-box .event-thumb .event-category {
@@ -228,7 +220,6 @@ button:active {
 }
 
 .event-box .event-thumb .event-date {
-    font-family: Gill Sans, Verdana;
 	text-transform: uppercase;
     line-height:36px;
     font-size:30px;
@@ -242,17 +233,8 @@ button:active {
     right:0;
 }
 
-.event-box .event-excerpt {
-    padding:10px;
-}
-
-.event-box .event-excerpt p {
-    margin:0;
-}
-
-.event-box .event-excerpt .event-title a, .content .entry h3 {
-    color:#637b6e;
-    font-size:22px;
+.events-table .event-box h4 {
+	text-transform: uppercase;
 }
 
 .event-box .event-excerpt .event-byline, .content .entry .event-byline {
@@ -265,6 +247,7 @@ button:active {
 }
 
 /* SINGLE EVENT */
+
 .sidebar {
     width:350px;
     background:#fff;
@@ -281,12 +264,12 @@ button:active {
     -moz-box-shadow:5px 5px 5px #ccc;
 }
 
-.entry {
+body.single .entry {
     width:500px;
     margin:20px 0 0 40px;
 }
 
-.entry img {
+body.single .entry img {
     width:250px;
     float:left;
     margin:10px 20px 0 0;
