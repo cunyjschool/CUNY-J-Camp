@@ -9,12 +9,20 @@ License: GNU General Public License
 License URI: license.txt
 */
 
-/* FONT TESTS */
-html {
-    background: #f7f7f7 url("images/bg.jpg") repeat;
+/*
+Color pallette options
+
+http://www.colourlovers.com/palette/1613268/citrico
+*/
+
+
+body, html, p, ol, ul, blockquote, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
 }
 
 body{
+	background-color: #35515C;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     line-height:22px;
     font-size:12px;
@@ -22,14 +30,13 @@ body{
     min-width:1008px;
 }
 
-h1, h2, h3, h4, ul, ol, html, body {
-	margin:0;
-	padding:0;
+h1, h2, h3, h4 {
+	font-family: "Droid Sans","Lucida Sans", "Verdana",Arial,sans-serif;
 }
 
 a {
     text-decoration:none;
-    color:#637b6e;
+    color:#D5624F;
 }
 
 a:hover {
@@ -90,30 +97,21 @@ button:hover {
 }
 
 button:active {
-background-position: bottom;
-border-color: #777777; 
+	background-position: bottom;
+	border-color: #777777; 
 }
-
-/* HEADER */
-/*.header {
-    background: #fff;
-    margin-top:-28px;
-    padding-top:20px;
-    border-bottom:1px solid #ccc;
-}*/
 
 .header .logo-and-tagline {
     border-bottom:1px solid #a3b6ac;
 }
 
 .header .logo-and-tagline .logo {
-    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Arial,sans-serif;
-    color:#a3b6ac;
-    font-size:50px;
-    line-height:80px;
-    height:120px;
+    color: #FFFFFF;
+    font-size: 36px;
+    line-height: 48px;
+    height: 120px;
     text-transform: uppercase;
-    letter-spacing:-5px;
+    letter-spacing: -4px;
 }
 
 .header .logo-and-tagline .logo a:hover {
@@ -125,36 +123,12 @@ border-color: #777777;
     margin-left:40px;
     line-height:29px;
     text-transform:uppercase;
-    font-family: Gill Sans, Verdana;
     letter-spacing: 1px;
     color:#a3b6ac;
 }
 
 .header .logo-and-tagline .logo span {
-    color:#a3b6ac;
-}
-
-.header .menu {
-    border-top:1px solid #a3b6ac;
-    margin-top:3px;
-}
-
-.header .menu ul li {
-    list-style:none;
-    float:left;
-}
-
-.header .menu ul li a {
-    color:#a01018;
-    font-size:20px;
-    height:20px;
-    padding:10px;
-    display:inline-block;
-    border-right:1px solid #a3b6ac;
-    font-family: Gill Sans, Verdana;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	outline:none;
+    color:#FFFFFF;
 }
 
 /* FOOTER */
@@ -242,7 +216,6 @@ border-color: #777777;
 }
 
 .event-box .event-excerpt .event-title a, .content .entry h3 {
-    font-family: "DroidSerifRegular",Georgia,"Times New Roman",Times,serif;
     color:#637b6e;
     font-size:22px;
 }

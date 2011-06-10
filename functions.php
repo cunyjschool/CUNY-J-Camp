@@ -55,7 +55,10 @@ class cunyjcamp
 	 */
 	function register_menus() {
 		
-		// @todo Register any navigation menus we need
+		$args = array( 
+			'primary-navigation' => 'Primary Navigation',
+		);
+		register_nav_menus( $args );
 		
 	} // END register_menus()
 	
@@ -86,6 +89,7 @@ class cunyjcamp
 		
 		if ( !is_admin() ) {
 			wp_enqueue_style( 'cunyjcamp_primary_css', get_bloginfo( 'template_directory' ) . '/style.css', false, CUNYJCAMP_VERSION );
+			wp_enqueue_style( 'google_droid_sans', 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold', false );
 		}
 		
 	} // END enqueue_resources()

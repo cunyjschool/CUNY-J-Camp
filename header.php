@@ -26,22 +26,28 @@
 <body <?php body_class(); ?>>
 
 <div class="header">
+	
 	<div class="wrap">
 		
 		<div class="logo-and-tagline">
-			<div class="logo float-left"><h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>J-Camp</a></h1></div>
+			<div class="logo float-left">
+				<h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>JCamp</a></h1>
+			</div>
 			<div class="tagline float-left"><?php bloginfo('description'); ?></div>
 			<div class="clear-both"></div>
-		</div>
+		</div><!-- END .logo-and-tagline -->
+		
 		<?php
     		$args = array(
-    			'theme_location' => 'header-menu',
-    			'container_class' => 'menu-header-menu-container',
-    			'menu_id' => 'menu-header-menu',
+    			'theme_location' => 'primary-navigation',
+    			'container_class' => 'primary-navigation-container',
+    			'menu_class' => 'primary-navigation inline-navigation',
+				'fallback_cb' => false,
     		);
     		wp_nav_menu( $args ); 
     	?>
     	<div class="clear-both"></div>
 		
 	</div><!-- END .wrap -->
+	
 </div><!-- END .header -->

@@ -11,7 +11,7 @@
 				<div class="event-date">Jan 12</div>
 			</div>
 			<div class="event-excerpt">
-				<div class="event-title"><a href="#">Here be the title</a></div>
+				<h3 class="event-title"><a href="#">Here be the title</a></h3>
 				<div class="event-byline">Posted by Ceiling Cat</div>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
 			</div>
