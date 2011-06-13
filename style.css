@@ -170,6 +170,7 @@ a img {
 	padding-bottom: 10px;
 	border-bottom:1px solid #B1B1B1;
 	background-color: #FFFFFF;
+	box-shadow: 3px 3px 4px #CCCCCC;
 }
 
 .header .branding {
@@ -216,11 +217,18 @@ a img {
 }
 
 /* FOOTER */
+
 .footer {
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
 	padding-bottom: 30px;
+	color: #888888;
+}
+
+.footer a {
+	color: #888888;
+	text-decoration: underline;
 }
 
 /* HOME */
@@ -242,7 +250,7 @@ a img {
 	margin-right: 10px;
 	margin-bottom: 10px;
 	min-height: 350px;
-	box-shadow: 3px 3px 4px #999;
+	box-shadow: 3px 3px 4px #CCCCCC;
 	display: block;
 	position: relative;
 }
@@ -379,7 +387,7 @@ body.single .post .entry {
 	width: 500px;
     border: 1px solid #B1B1B1;
 	background: #FFFFFF;
-	box-shadow: 3px 3px 4px #999;
+	box-shadow: 3px 3px 4px #CCCCCC;
 	padding-top: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
