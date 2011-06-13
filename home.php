@@ -21,7 +21,7 @@
 
 	<?php while ( $all_events->have_posts()) : $all_events->the_post(); ?>
 
-		<a class="post post-type-event event-box float-left" href="<?php the_permalink(); ?>">
+		<a class="post post-type-event event-box float-left<?php if ( !has_post_thumbnail() ) { echo ' no-thumbnail'; } ?>" href="<?php the_permalink(); ?>">
 			
 		<?php
 			$start_timestamp = get_post_meta( get_the_id(), '_cunyjcamp_start_timestamp', true );

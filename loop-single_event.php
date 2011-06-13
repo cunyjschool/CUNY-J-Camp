@@ -1,14 +1,20 @@
 <div class="content">
 
-    <div class="entry">
+    <div class="post post-type-event">
         
         <?php if (have_posts()) : while ( have_posts()) : the_post(); ?>
             	        
     		<h2><?php the_title() ?></h2>
-		
-    		<div class="event-byline">Posted by Ceiling Cat</div>
+
+			<?php if ( !empty( $post->post_excerpt ) ): ?>
+			<div class="excerpt">
+				<?php the_excerpt(); ?>
+			</div>
+			<?php endif; ?>
         
-            <?php the_content() ?>
+			<div class="entry">
+            	<?php the_content(); ?>
+			</div>
         
             <div class="buttons">
             
@@ -17,15 +23,13 @@
         
             </div>
         
-            <?php comments_template('', true); ?>
-        
         <?php endwhile; else: ?>
             
             <div class="message info">Sorry, no posts matched your criteria.</div>
         
         <?php endif; ?>
     
-    </div><!-- END .entry -->
+    </div><!-- END .post -->
     
     <div class="clear-both"></div>
     

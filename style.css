@@ -25,8 +25,8 @@ body, html, p, ol, ul, blockquote, h1, h2, h3, h4, h5, h6 {
 body{
 	background-color: #35515C;
 	font-family: "Droid Sans","Lucida Sans", "Verdana", "Arial", sans-serif;
-    line-height: 18px;
-    font-size: 12px;
+    line-height: 20px;
+    font-size: 14px;
     color: #222222;
     min-width: 1008px;
 }
@@ -41,7 +41,10 @@ h1 {
 }
 
 h2 {
-	
+	font-size: 36px;
+	line-height: 48px;
+	padding-top: 10px;
+	padding-bottom: 15px;
 }
 
 h3 {
@@ -107,8 +110,14 @@ a img {
 }
 
 .wrap {
-    margin:20px;
-    padding:10px;
+	width: 860px;
+}
+
+.main {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 3px;
 }
 
 .message {
@@ -153,12 +162,38 @@ button:active {
 	border-radius: 10px;
 }
 
+.entry p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.entry ol,
+.entry ul {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #888888;
+}
+
+.entry li {
+	color: #222222;
+}
+
 /**
  * Section: .header
  */
 
+.header {
+	padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	border-bottom:1px solid #a3b6ac;
+}
+
 .header .branding {
-    border-bottom:1px solid #a3b6ac;
+
 }
 
 .header .branding .logo {
@@ -192,14 +227,26 @@ button:active {
 	padding-bottom: 3px;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-top: 20px;
 }
 
 .header a.email-newsletter-signup:hover {
 	
 }
 
-/* HOME */
+/* FOOTER */
+.footer {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
 
+/* HOME */
+.events-table {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
 .events-table a.event-box {
     width: 220px;
@@ -257,6 +304,11 @@ button:active {
 	padding-bottom: 1px;
 }
 
+.events-table a.event-box.no-thumbnail h4 {
+	margin-right: 35px;
+	padding-top: 0;
+}
+
 .events-table a.event-box:hover h4 {
 	color: #E4C44D;
 }
@@ -296,16 +348,30 @@ button:active {
 
 /* SINGLE EVENT */
 
-body.single .entry {
-    width:500px;
-    margin:20px 0 0 40px;
+body.single .content {
+
 }
 
-body.single .entry img {
-    width:250px;
-    float:left;
-    margin:10px 20px 0 0;
-    border:1px solid #a3b6ac;
+body.single .post h2 {
+	color: #FFFFFF;
+	padding-bottom: 10px;
+}
+
+body.single .post .excerpt {
+	font-size: 18px;
+	line-height: 24px;
+	padding-bottom: 10px;
+}
+
+body.single .post .entry {
+	width: 500px;
+    border: 1px solid #618291;
+	background: #FFFFFF;
+	box-shadow: 3px 3px 4px #34474F;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
 }
 
 .sidebar .event-details {
