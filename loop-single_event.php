@@ -3,14 +3,39 @@
     <div class="post post-type-event">
         
         <?php if (have_posts()) : while ( have_posts()) : the_post(); ?>
+	
+			<a class="float-right event-registration button" href="#">Register</a>	
             	        
     		<h2><?php the_title() ?></h2>
+
+			<div class="clear-right"></div>
 
 			<?php if ( !empty( $post->post_excerpt ) ): ?>
 			<div class="excerpt">
 				<?php the_excerpt(); ?>
 			</div>
 			<?php endif; ?>
+			
+			<div class="sidebar event-meta float-right">
+				
+				<?php
+					$args = array(
+						'orderby' => 'name',
+					);
+					$instructors = wp_get_object_terms( get_the_id(), 'cunyjcamp_instructors', $args );
+				?>
+				<?php if ( !empty( $instructors) ): ?>
+				<div class="sidebar-item instructors">
+					<h3>Instructor<?php if ( count( $instructors ) > 1 ) { echo 's'; } ?></h3>
+					<?php
+						foreach ( $instructors as $instructor ) {
+							echo '<h4>' . $instructor->name . '</h4>';
+						}
+					?>
+				</div>
+				<?php endif; ?>
+				
+			</div>
         
 			<div class="entry">
             	<?php the_content(); ?>

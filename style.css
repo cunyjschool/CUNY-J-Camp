@@ -23,7 +23,7 @@ body, html, p, ol, ul, blockquote, h1, h2, h3, h4, h5, h6 {
 }
 
 body{
-	background-color: #35515C;
+	background-color: #F2F2F2;
 	font-family: "Droid Sans","Lucida Sans", "Verdana", "Arial", sans-serif;
     line-height: 20px;
     font-size: 14px;
@@ -61,7 +61,7 @@ h4 {
 
 a {
     text-decoration:none;
-    color:#D5624F;
+    color:#CC333F;
 }
 
 a:hover {
@@ -157,9 +157,7 @@ button:active {
 }
 
 .button {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+
 }
 
 .entry p {
@@ -189,7 +187,7 @@ button:active {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-bottom: 10px;
-	border-bottom:1px solid #a3b6ac;
+	border-bottom:1px solid #B1B1B1;
 }
 
 .header .branding {
@@ -203,7 +201,7 @@ button:active {
 }
 
 .header .branding .logo span {
-    color: #FFFFFF;
+    color: #00B4FF;
 }
 
 .header .branding .logo a:hover {
@@ -215,14 +213,15 @@ button:active {
     margin-left: 40px;
 	font-size: 16px;
 	line-height: 22px;
-	color: #E4C44D;
+	color: #888888;
 	padding-top: 8px;
+	font-style: italic;
 }
 
 .header a.email-newsletter-signup {
 	display: block;
-	background-color: #888888;
-	color: #FFFFFF;
+	background-color: #FFF7A6;
+	color: #888888;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-left: 10px;
@@ -254,14 +253,14 @@ button:active {
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 20px;
-    border: 1px solid #618291;
+    border: 1px solid #B1B1B1;
     background: #fff;
 	margin-top: 0;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
 	min-height: 350px;
-	box-shadow: 3px 3px 4px #34474F;
+	box-shadow: 3px 3px 4px #999;
 	display: block;
 	position: relative;
 }
@@ -285,7 +284,7 @@ button:active {
 	top: 10px;
 	right: 8px;
 	color: #FFFFFF;
-	background-color: #D5624F;
+	background-color: #CC333F;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-left: 5px;
@@ -352,9 +351,25 @@ body.single .content {
 
 }
 
-body.single .post h2 {
+body.single a.event-registration {
+	margin-top: 5px;
+	display: block;
+	background-color: #00B4FF;
 	color: #FFFFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 24px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+
+body.single .post h2 {
 	padding-bottom: 10px;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: normal;
 }
 
 body.single .post .excerpt {
@@ -362,12 +377,15 @@ body.single .post .excerpt {
 	line-height: 24px;
 	padding-bottom: 10px;
 }
+body.single .sidebar.event-meta {
+	width: 300px;
+}
 
 body.single .post .entry {
 	width: 500px;
-    border: 1px solid #618291;
+    border: 1px solid #B1B1B1;
 	background: #FFFFFF;
-	box-shadow: 3px 3px 4px #34474F;
+	box-shadow: 3px 3px 4px #999;
 	padding-top: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
