@@ -277,8 +277,16 @@ button:active {
 	right: 10px;
 }
 
+.events-table a.event-box .learn-more .hidden-text {
+	display: none;
+}
+
 .events-table a.event-box:hover .learn-more {
 	color: #E4C44D;
+}
+
+.events-table a.event-box:hover .learn-more .hidden-text {
+	display: inline;
 }
 
 .events-table a.event-box .entry {
@@ -287,22 +295,6 @@ button:active {
 
 
 /* SINGLE EVENT */
-
-.sidebar {
-    width:350px;
-    background:#fff;
-    border:1px solid #222;
-    padding:10px 10px 10px 50px;
-    margin:100px 0 20px -40px;
-    -moz-box-shadow:5px 5px 5px #ccc;
-}
-
-.sidebar img {
-    width:100%;
-    margin:-35% 0 20px 0;
-    border:1px solid #222;
-    -moz-box-shadow:5px 5px 5px #ccc;
-}
 
 body.single .entry {
     width:500px;

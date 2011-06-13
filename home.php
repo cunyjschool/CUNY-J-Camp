@@ -55,7 +55,7 @@
 				<?php the_excerpt(); ?>
 			</div>
 			
-			<span class="learn-more">&rarr;</span>
+			<span class="learn-more"><em class="hidden-text">Learn more</em> &rarr;</span>
 
 		</a><!-- END .post.event-box -->
 

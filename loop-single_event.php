@@ -1,12 +1,10 @@
 <div class="content">
-    
-    <?php get_sidebar(); ?>
 
-    <div class="entry float-left">
+    <div class="entry">
         
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) : while ( have_posts()) : the_post(); ?>
             	        
-    		<h3><?php the_title() ?></h3>
+    		<h2><?php the_title() ?></h2>
 		
     		<div class="event-byline">Posted by Ceiling Cat</div>
         
