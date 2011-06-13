@@ -169,6 +169,7 @@ a img {
 	padding-right: 15px;
 	padding-bottom: 10px;
 	border-bottom:1px solid #B1B1B1;
+	background-color: #FFFFFF;
 }
 
 .header .branding {
@@ -333,8 +334,7 @@ body.single .content {
 }
 
 body.single a.event-registration {
-	margin-top: 5px;
-	display: block;
+	display: inline-block;
 	background-color: #00B4FF;
 	color: #FFFFFF;
 	padding-top: 5px;
@@ -343,7 +343,6 @@ body.single a.event-registration {
 	padding-right: 10px;
 	font-size: 24px;
 	line-height: 30px;
-	margin-left: 20px;
 }
 
 body.single .post h2 {
@@ -354,9 +353,10 @@ body.single .post h2 {
 }
 
 body.single .post .excerpt {
-	font-size: 18px;
-	line-height: 24px;
-	padding-bottom: 10px;
+	font-size: 17px;
+	line-height: 26px;
+	padding-top: 5px;
+	padding-bottom: 15px;
 }
 
 body.single .sidebar.event-meta {
