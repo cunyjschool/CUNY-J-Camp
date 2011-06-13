@@ -46,13 +46,6 @@
             	<?php the_content(); ?>
 			</div>
         
-            <div class="buttons">
-            
-                <button>Book tickets</button>
-                <button>Add to Calendar</button>
-        
-            </div>
-        
         <?php endwhile; else: ?>
             
             <div class="message info">Sorry, no posts matched your criteria.</div>
