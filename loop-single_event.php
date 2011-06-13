@@ -18,6 +18,11 @@
 			
 			<div class="sidebar event-meta float-right">
 				
+				<div class="sidebar-item">
+					<h3>Date &amp; Time</h3>
+					
+				</div>
+				
 				<?php
 					$args = array(
 						'orderby' => 'name',
