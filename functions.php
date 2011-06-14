@@ -169,6 +169,40 @@ class cunyjcamp
 		register_taxonomy( 'cunyjcamp_equipment', $post_types, $args );
 		$this->theme_taxonomies[] = 'cunyjcamp_equipment';
 		
+		// Register the Location taxonomy
+		$args = array(
+			'label' => 'Locations',
+			'labels' => array(
+				'name' => 'Locations',
+				'singular_name' => 'Location',
+				'search_items' =>  'Search Locations',
+				'popular_items' => 'Popular Locations',
+				'all_items' => 'All Locations',
+				'parent_item' => 'Parent Location',
+				'parent_item_colon' => 'Parent Location:',
+				'edit_item' => 'Edit Location', 
+				'update_item' => 'Update Location',
+				'add_new_item' => 'Add New Location',
+				'new_item_name' => 'New Location',
+				'separate_items_with_commas' => 'Separate locations with commas',
+				'add_or_remove_items' => 'Add or remove locations',
+				'choose_from_most_used' => 'Choose from the most common locations',
+				'menu_name' => 'Locations',
+			),
+			'show_tagcloud' => false,
+			'hierarchical' => true,		
+			'rewrite' => array(
+				'slug' => 'locations',
+				'hierarchical' => true,
+			),
+		);
+
+		$post_types = array(
+			'cunyjcamp_event',
+		);
+		register_taxonomy( 'cunyjcamp_locations', $post_types, $args );
+		$this->theme_taxonomies[] = 'cunyjcamp_locations';
+		
 	} // END create_taxonomies()
 	
 	/**
@@ -179,6 +213,7 @@ class cunyjcamp
 		// Remove taxonomy metaboxes
 		remove_meta_box( 'tagsdiv-cunyjcamp_instructors', 'cunyjcamp_event', 'side' );
 		remove_meta_box( 'tagsdiv-cunyjcamp_equipment', 'cunyjcamp_event', 'side' );	
+		remove_meta_box( 'tagsdiv-cunyjcamp_locations', 'cunyjcamp_event', 'side' );		
 		
 	} // END remove_metaboxes()
 	
