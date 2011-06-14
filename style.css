@@ -14,6 +14,9 @@ Color pallette options
 
 http://www.colourlovers.com/palette/1613268/citrico
 Background: #35515C
+
+http://www.colourlovers.com/palette/1473/Ocean_Five
+http://www.colourlovers.com/palette/1/metro
 */
 
 
@@ -353,7 +356,8 @@ body.single a.event-registration {
 	line-height: 30px;
 }
 
-body.single .post h2 {
+body.single .post h2,
+body.page .post h2 {
 	padding-bottom: 10px;
 	font-size: 30px;
 	line-height: 36px;
@@ -383,7 +387,8 @@ body.single .sidebar.event-meta h3 {
 	color: #888888;
 }
 
-body.single .post .entry {
+body.single .post .entry,
+body.page .post .entry {
 	width: 500px;
     border: 1px solid #B1B1B1;
 	background: #FFFFFF;
