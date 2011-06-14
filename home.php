@@ -16,6 +16,18 @@
 	?>
 	
 	<?php if ( $all_events->have_posts() ) : ?>
+		
+	<div class="promo-video float-right">
+		
+		<iframe src="http://player.vimeo.com/video/25087510?title=0&amp;byline=0&amp;portrait=0" width="331" height="186" frameborder="0"></iframe>
+		
+		<?php if ( $promo_text = cunyjcamp_get_theme_option( 'home_introduction_text' ) ): ?>
+		<div class="promo-text entry">
+			<?php echo wpautop( $promo_text ); ?>
+		</div>
+		<?php endif; ?>
+		
+	</div><!-- END .promo-video -->
 	
 	<div class="events-table">
 

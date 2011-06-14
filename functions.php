@@ -225,14 +225,36 @@ class cunyjcamp
 		register_setting( $this->options_group, $this->options_group_name, array( &$this, 'settings_validate' ) );
 		
 		// @todo Register any settings we need
+		// Home section
+		add_settings_section( 'cunyjcamp_home', 'Home', array(&$this, 'settings_home_section'), $this->settings_page );
+		add_settings_field( 'home_introduction_text', 'Introductory Text', array(&$this, 'settings_home_introduction_text_option'), $this->settings_page, 'cunyjcamp_home' );
 
 	} // END register_settings()
+	
+	/**
+	 * settings_home_introduction_text_option()
+	 */
+	function settings_home_introduction_text_option() {
+
+		$options = $this->options;
+		$allowed_tags = htmlentities( '<b><strong><em><i><span><a><br><ol><li><ul><p><blockquote>' );
+
+		echo '<textarea id="home_introduction_text" name="' . $this->options_group_name . '[home_introduction_text]" cols="80" rows="6">';
+		if ( isset( $options['home_introduction_text'] ) && $options['home_introduction_text'] ) {
+			echo $options['home_introduction_text'];
+		}
+		echo '</textarea>';
+		echo '<p class="description">The following tags are permitted: ' . $allowed_tags . '</p>';
+
+	} // END settings_home_introduction_text_option()
 	
 	/**
 	 * settings_validate()
 	 * Validation and sanitization on the settings field
 	 */
 	function settings_validate( $input ) {
+		
+		$allowed_tags = htmlentities( '<b><strong><em><i><span><a><br><ol><li><ul><p><blockquote>' );
 
 		return $input;
 
@@ -284,5 +306,18 @@ function cunyjcamp_head_title() {
 	echo '<title>' . $title . '</title>';
 	
 } // END cunyjcamp_head_title()
+
+/**
+ * cunyjcamp_get_theme_option()
+ */ 
+function cunyjcamp_get_theme_option( $key ) {
+	global $cunyjcamp;
+	
+	if ( isset( $cunyjcamp->options[$key] ) )
+		return $cunyjcamp->options[$key];
+	else
+		return false;
+ 	
+} // END cunyjcamp_get_theme_option()
 
 ?>

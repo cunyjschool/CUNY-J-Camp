@@ -246,6 +246,17 @@ a img {
 }
 
 /* HOME */
+
+body.home-page .promo-video {
+	width: 330px;
+	height: 400px;
+}
+
+body.home-page .promo-text {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .events-table {
 	margin-top: 20px;
 	margin-bottom: 20px;
