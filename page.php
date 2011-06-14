@@ -4,8 +4,6 @@
 	
 	<div class="wrap">
 		
-		<?php get_sidebar( 'page' ); ?>
-		
 		<?php get_template_part( 'loop', 'page' ); ?>
 		
 	</div><!-- END .wrap -->

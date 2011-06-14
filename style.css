@@ -371,20 +371,33 @@ body.single .post .excerpt {
 	padding-bottom: 15px;
 }
 
-body.single .sidebar.event-meta {
+body.single .sidebar.event-meta,
+body.page .sidebar.page-meta {
 	width: 300px;
 	margin-right: 15px;
 }
 
-body.single .sidebar.event-meta .sidebar-item {
+body.single .sidebar.event-meta .sidebar-item,
+body.page .sidebar.page-meta .sidebar-item {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-body.single .sidebar.event-meta h3 {
+body.single .sidebar.event-meta h3,
+body.page .sidebar.page-meta h3 {
 	font-style: italic;
 	font-weight: normal;
 	color: #888888;
+}
+
+body.page .sidebar.page-meta .sidebar-item ul {
+	list-style-type: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+body.page .sidebar.page-meta .sidebar-item ul li {
+	
 }
 
 body.single .post .entry,
