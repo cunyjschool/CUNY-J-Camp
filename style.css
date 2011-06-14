@@ -204,6 +204,17 @@ a img {
 	font-style: italic;
 }
 
+.header .branding .tagline .learn-more {
+	font-size: 12px;
+	line-height: 18px;
+	font-style: normal;
+	margin-left: 5px;
+}
+
+.header .branding .tagline .learn-more:hover {
+	text-decoration: underline;
+}
+
 .header a.email-newsletter-signup {
 	display: block;
 	background-color: #FFF7A6;
@@ -303,6 +314,7 @@ a img {
 
 .events-table a.event-box:hover h4 {
 	color: #E4C44D;
+	text-decoration: underline;
 }
 
 .events-table a.event-box .event-meta {
@@ -327,6 +339,7 @@ a img {
 
 .events-table a.event-box:hover .learn-more {
 	color: #E4C44D;
+	text-decoration: underline;	
 }
 
 .events-table a.event-box:hover .learn-more .hidden-text {

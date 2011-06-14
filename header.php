@@ -36,7 +36,7 @@
 			<div class="logo float-left">
 				<h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>JCamp</a></h1>
 			</div>
-			<div class="tagline float-left"><?php bloginfo( 'description' ); ?></div>
+			<div class="tagline float-left"><?php bloginfo( 'description' ); ?>&nbsp;<a class="learn-more" href="<?php bloginfo('url'); ?>/about/">Learn more &rarr;</a></div>
 			
 			<div class="clear-both"></div>
 			
