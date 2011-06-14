@@ -3,6 +3,15 @@
     <div class="post post-type-event">
         
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	
+			<div class="float-right share-buttons">
+				<div class="share-button share-facebook">
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=191589374223478&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="150" show_faces="false" font=""></fb:like>
+				</div>
+				<div class="share-button share-twitter">
+					<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+				</div>
+			</div>	
             	        
     		<h2><?php the_title() ?></h2>
 
@@ -15,7 +24,9 @@
 			<div class="sidebar event-meta float-right">
 				
 				<div class="sidebar-item">
-					<a class="event-registration button" href="#">Register</a>	
+									
+					<a class="event-registration button" href="#">Register</a>				
+				
 				</div>
 				
 				<div class="sidebar-item">

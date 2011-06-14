@@ -414,6 +414,16 @@ body.page .sidebar.page-meta h3 {
 	color: #888888;
 }
 
+body.single .share-buttons {
+	margin-left: 20px;
+	width: 165px;
+	margin-top: 5px;
+}
+
+body.single .share-buttons .share-button {
+	padding-bottom: 5px;
+}
+
 body.page .sidebar.page-meta .sidebar-item ul {
 	list-style-type: none;
 	padding-top: 5px;
