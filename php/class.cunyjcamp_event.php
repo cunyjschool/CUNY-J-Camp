@@ -103,18 +103,25 @@ class cunyjcamp_event
 		
 		$all_day_event = get_post_meta( $post->ID, '_cunyjcamp_all_day_event', true );
 		
-		$date_time_format = 'm/d/y g:i A';
+		$date_format = 'm/d/y';
+		$time_format = 'g:i A';		
 		$start_timestamp = get_post_meta( $post->ID, '_cunyjcamp_start_timestamp', true );
-		if ( $start_timestamp )
-			$start_date_time = date( $date_time_format, $start_timestamp );
-		else
-			$start_date_time = '';
+		if ( $start_timestamp ) {
+			$start_date = date( $date_format, $start_timestamp );
+			$start_time = date( $time_format, $start_timestamp );			
+		} else {
+			$start_date = '';
+			$start_time = '';
+		}
 			
 		$end_timestamp = get_post_meta( $post->ID, '_cunyjcamp_end_timestamp', true );
-		if ( $end_timestamp )
-			$end_date_time = date( $date_time_format, $end_timestamp );
-		else
-			$end_date_time = '';
+		if ( $end_timestamp ) {
+			$end_date = date( $date_format, $end_timestamp );
+			$end_time = date( $time_format, $end_timestamp );			
+		} else {
+			$end_date = '';
+			$end_time = '';
+		}
 		
 		$args = array(
 			'fields' => 'ids',
@@ -135,20 +142,32 @@ class cunyjcamp_event
 				
 				<h4>Date &amp; Time</h4>
 				
-				<p>
+				<div class="line-item">
 					<label for="cunyjcamp-all-day-event" class="float-left">All day event</label>
 					<input id="cunyjcamp-all-day-event" name="cunyjcamp-all-day-event" type="checkbox"<?php if ( $all_day_event == 'on' ) echo ' checked="checked"'; ?> />
-				</p>
-				
-				<div class="float-left">
-				<label for="cunyjcamp-start-date-time">Please specify a starting date &amp; time <span class="required">*</span></label>
-				<input id="cunyjcamp-start-date-time" name="cunyjcamp-start-date-time" class="cunyjcamp-date-time-picker" size="25" value="<?php echo $start_date_time; ?>" />
 				</div>
 				
-				<div>
-				<label for="cunyjcamp-end-date-time">Please specify an ending date &amp; time <span class="required">*</span></label>
-				<input id="cunyjcamp-end-date-time" name="cunyjcamp-end-date-time" class="cunyjcamp-date-time-picker" size="25" value="<?php echo $end_date_time; ?>" />
+				<div class="line-item">
+				<div class="pick-date">
+					<label for="cunyjcamp-start-date" class="primary-label">Start date <span class="required">*</span></label>
+					<input id="cunyjcamp-start-date" name="cunyjcamp-start-date" class="cunyjcamp-date-picker" size="25" value="<?php echo $start_date; ?>" />
 				</div>
+				<div class="pick-time<?php if ( $all_day_event == 'on' ) echo ' display-none'; ?>">
+					<label for="cunyjcamp-start-time" class="secondary-label">Start time <span class="required">*</span></label>
+					<input id="cunyjcamp-start-time" name="cunyjcamp-start-time" class="cunyjcamp-time-picker" size="25" value="<?php echo $start_time; ?>" />
+				</div>
+				</div><!-- END .line-item -->
+				
+				<div class="line-item">
+				<div class="pick-date">
+					<label for="cunyjcamp-end-date" class="primary-label">End date <span class="required">*</span></label>
+					<input id="cunyjcamp-end-date" name="cunyjcamp-end-date" class="cunyjcamp-date-picker" size="25" value="<?php echo $end_date; ?>" />
+				</div>
+				<div class="pick-time<?php if ( $all_day_event == 'on' ) echo ' display-none'; ?>">
+					<label for="cunyjcamp-end-time" class="secondary-label">End time <span class="required">*</span></label>
+					<input id="cunyjcamp-end-time" name="cunyjcamp-end-time" class="cunyjcamp-time-picker" size="25" value="<?php echo $end_time; ?>" />
+				</div>
+				</div><!-- END .line-item -->
 				
 				<div class="clear-both"></div>
 				
@@ -264,10 +283,10 @@ class cunyjcamp_event
 				$all_day_event = 'off';
 			update_post_meta( $post_id, '_cunyjcamp_all_day_event', $all_day_event );
 			
-			$start_timestamp = strtotime( $_POST['cunyjcamp-start-date-time'] );
+			$start_timestamp = strtotime( $_POST['cunyjcamp-start-date'] . ' ' . $_POST['cunyjcamp-start-time'] );
 			update_post_meta( $post_id, '_cunyjcamp_start_timestamp', $start_timestamp );
 			
-			$end_timestamp = strtotime( $_POST['cunyjcamp-end-date-time'] );
+			$end_timestamp = strtotime( $_POST['cunyjcamp-end-date'] . ' ' . $_POST['cunyjcamp-end-time'] );
 			update_post_meta( $post_id, '_cunyjcamp_end_timestamp', $end_timestamp );			
 			
 			$required_equipment_terms = $_POST['cunyjcamp-required-equipment'];
