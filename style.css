@@ -186,6 +186,10 @@ a img {
     letter-spacing: -3px;
 }
 
+.header .branding .logo h1 a {
+	color: #777777;
+}
+
 .header .branding .logo span {
     color: #00B4FF;
 }
@@ -282,7 +286,7 @@ body.home-page .promo-text {
 
 .events-table a.event-box:hover {
 	text-decoration: none;
-	border-color: #E4C44D;
+	border-color: #00B4FF;
 }
 
 .events-table a.event-box img {
@@ -290,7 +294,7 @@ body.home-page .promo-text {
 }
 
 .events-table a.event-box:hover img {
-	border-color: #E4C44D;
+	border-color: #00B4FF;
 }
 
 .events-table a.event-box .event-date {
@@ -310,7 +314,7 @@ body.home-page .promo-text {
 }
 
 .events-table a.event-box:hover .event-date {
-	background-color: #E4C44D;
+	background-color: #00B4FF;
 }
 
 .events-table a.event-box h4 {
@@ -324,7 +328,7 @@ body.home-page .promo-text {
 }
 
 .events-table a.event-box:hover h4 {
-	color: #E4C44D;
+	color: #00B4FF;
 	text-decoration: underline;
 }
 
@@ -349,7 +353,7 @@ body.home-page .promo-text {
 }
 
 .events-table a.event-box:hover .learn-more {
-	color: #E4C44D;
+	color: #00B4FF;
 	text-decoration: underline;	
 }
 
