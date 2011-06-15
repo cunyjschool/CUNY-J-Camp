@@ -340,4 +340,41 @@ function cunyjcamp_get_theme_option( $key ) {
  	
 } // END cunyjcamp_get_theme_option()
 
+/**
+ * cunyjcamp_get_date_time()
+ */
+function cunyjcamp_get_date_time( $type ) {
+	global $post;
+	
+	if ( !isset( $post ) )
+		return '';
+
+	$all_day_event = get_post_meta( $post->ID, '_cunyjcamp_all_day_event', true );	
+	$start_timestamp = get_post_meta( $post->ID, '_cunyjcamp_start_timestamp', true );
+	$end_timestamp = get_post_meta( $post->ID, '_cunyjcamp_end_timestamp', true );
+	
+	if ( !$start_timestamp || !$end_timestamp )
+		return '';
+		
+	$html = '';	
+	if ( $type == 'short' ) {
+		$date_format = 'm/d/y';
+		$time_format = 'g:i A';
+		// @todo complete
+	} else if ( $type == 'short_time' ) {
+		$time_format = 'g:i A';
+		$start_time = date( $time_format, $start_timestamp );
+		$end_time = date( $time_format, $end_timestamp );		
+		if ( $all_day_event == 'on' || $start_time == $end_time )
+			$html .= 'All day';
+		else
+			$html .= $start_time . ' to ' . $end_time;
+	} else if ( $type == 'long' ) {
+		$date_format = 'l, M. j';
+		$time_format = 'g:i A';
+	}
+	return $html;
+	
+} // END cunyjcamp_get_date_time()
+
 ?>

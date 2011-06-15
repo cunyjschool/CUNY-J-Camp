@@ -67,6 +67,10 @@
 				<?php the_excerpt(); ?>
 			</div>
 			
+			<?php if ( $date_time = cunyjcamp_get_date_time( 'short_time' ) ): ?>
+			<span class="date-time"><?php echo $date_time; ?></span>
+			<?php endif; ?>
+			
 			<span class="learn-more"><em class="hidden-text">Details</em> &rarr;</span>
 
 		</a><!-- END .post.event-box -->
