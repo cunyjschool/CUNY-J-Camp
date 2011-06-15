@@ -119,7 +119,11 @@ class cunyjcamp_event
 		);
 		$required_equipment_terms = wp_get_object_terms( $post->ID, 'cunyjcamp_equipment', $args );
 		$event_instructors = wp_get_object_terms( $post->ID, 'cunyjcamp_instructors', $args );
-		
+		$event_locations = wp_get_object_terms( $post->ID, 'cunyjcamp_locations', $args );		
+		if ( !empty( $event_locations ) )
+			$event_location = $event_locations[0];
+		else
+			$event_location = false;
 		?>
 		
 		<div class="inner">
@@ -182,7 +186,7 @@ class cunyjcamp_event
 					
 				<?php
 					$args = array(
-						'orderby' => 'name',
+						'orderby' => 'term_group',
 						'hide_empty' => false,
 					);
 					$instructor_terms = get_terms( 'cunyjcamp_instructors', $args );
@@ -207,7 +211,22 @@ class cunyjcamp_event
 				
 				<h4>Location</h4>
 				
-				tk
+				<?php
+					$args = array(
+						'hide_empty' => false,
+						'taxonomy' => 'cunyjcamp_locations',
+						'name' => 'cunyjcamp-locations[]',
+						'id' => 'cunyjcamp-locations',
+						'hierarchical' => true,
+						'depth' => 2,
+						'class' => 'term-selector',
+						'selected' => $event_location,
+						'echo' => true,
+					);
+					wp_dropdown_categories( $args );
+				?>
+				
+				<div class="clear-both"></div>
 				
 			</div>
 			
