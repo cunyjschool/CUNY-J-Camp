@@ -150,7 +150,7 @@ class cunyjcamp_event
 
 				<h4>Prerequisite Knowledge</h4>
 				
-				tk
+				<p>tk</p>
 				
 			</div>
 				
@@ -212,7 +212,7 @@ class cunyjcamp_event
 				<h4>Location</h4>
 				
 				<?php
-					$args = array(
+					/* $args = array(
 						'hide_empty' => false,
 						'taxonomy' => 'cunyjcamp_locations',
 						'name' => 'cunyjcamp-locations[]',
@@ -223,8 +223,9 @@ class cunyjcamp_event
 						'selected' => $event_location,
 						'echo' => true,
 					);
-					wp_dropdown_categories( $args );
+					wp_dropdown_categories( $args ); */
 				?>
+				<p>Tk</p>
 				
 				<div class="clear-both"></div>
 				
