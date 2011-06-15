@@ -227,9 +227,26 @@ class cunyjcamp
 		// @todo Register any settings we need
 		// Home section
 		add_settings_section( 'cunyjcamp_home', 'Home', array(&$this, 'settings_home_section'), $this->settings_page );
+		add_settings_field( 'header_email_signup', 'Email Newsletter Signup URL', array(&$this, 'settings_header_email_signup_option'), $this->settings_page, 'cunyjcamp_home' );		
 		add_settings_field( 'home_introduction_text', 'Introductory Text', array(&$this, 'settings_home_introduction_text_option'), $this->settings_page, 'cunyjcamp_home' );
 
 	} // END register_settings()
+	
+	/**
+	 * settings_header_email_signup_option()
+	 */
+	function settings_header_email_signup_option() {
+
+		$options = $this->options;
+
+		echo '<input id="header_email_signup" name="' . $this->options_group_name . '[header_email_signup]" type="input" size="80"';
+		if ( isset( $options['header_email_signup'] ) && $options['header_email_signup'] ) {
+			echo ' value="' . $options['header_email_signup'] . '"';
+		}
+		echo ' />';
+		echo '<p class="description">Please add a link to the email newsletter signup form.</p>';
+
+	} // END settings_header_email_signup_option()
 	
 	/**
 	 * settings_home_introduction_text_option()
@@ -255,6 +272,9 @@ class cunyjcamp
 	function settings_validate( $input ) {
 		
 		$allowed_tags = htmlentities( '<b><strong><em><i><span><a><br><ol><li><ul><p><blockquote>' );
+		
+		$input['header_email_signup'] = strip_tags( $input['header_email_signup'] );
+		$input['home_introduction_text'] = strip_tags( $input['home_introduction_text'], $allowed_tags );
 
 		return $input;
 

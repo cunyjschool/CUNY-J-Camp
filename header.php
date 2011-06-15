@@ -31,7 +31,9 @@
 		
 		<div class="branding">
 			
-			<a class="email-newsletter-signup float-right button primary-button" href="#">Sign up for updates</a>
+			<?php if ( $header_email_signup = cunyjcamp_get_theme_option( 'header_email_signup' ) ): ?>
+			<a class="email-newsletter-signup float-right button primary-button" target="blank" href="<?php echo $header_email_signup; ?>">Sign up for updates</a>
+			<?php endif; ?>
 			
 			<div class="logo float-left">
 				<h1><a href="<?php bloginfo('url'); ?>"><span>CUNY</span>JCamp</a></h1>
