@@ -32,6 +32,10 @@
 				<div class="sidebar-item">
 					<h3>Date &amp; Time</h3>
 					
+					<?php if ( $date_time = cunyjcamp_get_date_time( 'long_both' ) ): ?>
+					<h4><?php echo $date_time; ?></h4>
+					<?php endif; ?>
+					
 				</div>
 				
 				<?php

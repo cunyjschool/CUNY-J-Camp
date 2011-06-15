@@ -369,9 +369,29 @@ function cunyjcamp_get_date_time( $type ) {
 			$html .= 'All day';
 		else
 			$html .= $start_time . ' to ' . $end_time;
-	} else if ( $type == 'long' ) {
-		$date_format = 'l, M. j';
+	} else if ( $type == 'long_both' ) {
+		$date_format = 'l, F j';
 		$time_format = 'g:i A';
+		
+		$start_date = date( $date_format, $start_timestamp );
+		$start_time = date( $time_format, $start_timestamp );
+		
+		$end_date = date( $date_format, $end_timestamp );
+		$end_time = date( $time_format, $end_timestamp );		
+		
+		if ( $start_date != $end_date && $all_day_event == 'on' )
+			$html = $start_date . '<br />to ' . $end_date;
+
+		if ( $start_date != $end_date && $all_day_event != 'on' )
+			$html = $start_date . ' at ' . $start_time . '<br />to ' . $end_date . ' at ' . $end_time;
+		
+		if ( $start_date == $end_date && $all_day_event == 'on' )
+			$html = $start_date;
+
+		if ( $start_date == $end_date && $all_day_event != 'on' )
+			$html = $start_date . '<br />from ' . $start_time . ' to ' . $end_time;
+		
+		
 	}
 	return $html;
 	
