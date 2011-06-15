@@ -101,6 +101,8 @@ class cunyjcamp_event
 	function post_meta_box() {
 		global $post;
 		
+		$all_day_event = get_post_meta( $post->ID, '_cunyjcamp_all_day_event', true );
+		
 		$date_time_format = 'm/d/y g:i A';
 		$start_timestamp = get_post_meta( $post->ID, '_cunyjcamp_start_timestamp', true );
 		if ( $start_timestamp )
@@ -119,6 +121,7 @@ class cunyjcamp_event
 		);
 		$required_equipment_terms = wp_get_object_terms( $post->ID, 'cunyjcamp_equipment', $args );
 		$event_instructors = wp_get_object_terms( $post->ID, 'cunyjcamp_instructors', $args );
+		
 		$event_locations = wp_get_object_terms( $post->ID, 'cunyjcamp_locations', $args );		
 		if ( !empty( $event_locations ) )
 			$event_location = $event_locations[0];
@@ -131,6 +134,11 @@ class cunyjcamp_event
 			<div class="date-time-wrap option-item hide-if-no-js">
 				
 				<h4>Date &amp; Time</h4>
+				
+				<p>
+					<label for="cunyjcamp-all-day-event" class="float-left">All day event</label>
+					<input id="cunyjcamp-all-day-event" name="cunyjcamp-all-day-event" type="checkbox"<?php if ( $all_day_event == 'on' ) echo ' checked="checked"'; ?> />
+				</p>
 				
 				<div class="float-left">
 				<label for="cunyjcamp-start-date-time">Please specify a starting date &amp; time <span class="required">*</span></label>
@@ -250,6 +258,11 @@ class cunyjcamp_event
 		}
 		
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
+			
+			$all_day_event = $_POST['cunyjcamp-all-day-event'];
+			if ( !$all_day_event )
+				$all_day_event = 'off';
+			update_post_meta( $post_id, '_cunyjcamp_all_day_event', $all_day_event );
 			
 			$start_timestamp = strtotime( $_POST['cunyjcamp-start-date-time'] );
 			update_post_meta( $post_id, '_cunyjcamp_start_timestamp', $start_timestamp );
