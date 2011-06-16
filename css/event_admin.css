@@ -10,6 +10,10 @@
 	clear: both;
 }
 
+#cunyjcamp-event .display-none {
+	display: none !important;
+}
+
 #cunyjcamp-event .inner {
 	padding-top: 5px;
 	padding-left: 15px;
@@ -21,6 +25,26 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-bottom: 15px;
+}
+
+#cunyjcamp-event .inner .line-item {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#cunyjcamp-event .inner .line-item .pick-date,
+#cunyjcamp-event .inner .line-item .pick-time {
+	display: inline-block;
+}
+
+#cunyjcamp-event .inner .line-item .pick-date {
+	padding-right: 10px;
+}
+
+#cunyjcamp-event .inner .line-item .pick-date label,
+#cunyjcamp-event .inner .line-item .pick-time label {
+	display: block;
+	padding-bottom: 5px;
 }
 
 #cunyjcamp-event .inner .required {
