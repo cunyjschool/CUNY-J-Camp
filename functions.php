@@ -370,7 +370,7 @@ function cunyjcamp_get_date_time( $type ) {
 		else
 			$html .= $start_time . ' to ' . $end_time;
 	} else if ( $type == 'long_both' ) {
-		$date_format = 'l, F j';
+		$date_format = 'l, F jS';
 		$time_format = 'g:i A';
 		
 		$start_date = date( $date_format, $start_timestamp );
