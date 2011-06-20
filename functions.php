@@ -1,6 +1,6 @@
 <?php
 
-define( 'CUNYJCAMP_VERSION', '0.3' );
+define( 'CUNYJCAMP_VERSION', '0.5' );
 
 // Require necessary files
 require_once( 'php/class.cunyjcamp_event.php' );
@@ -91,6 +91,11 @@ class cunyjcamp
 		if ( !is_admin() ) {
 			wp_enqueue_style( 'cunyjcamp_primary_css', get_bloginfo( 'template_directory' ) . '/style.css', false, CUNYJCAMP_VERSION );
 			wp_enqueue_style( 'google_droid_sans', 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold', false );
+			
+			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'jquery_jlayout', get_bloginfo( 'template_directory' ) . '/js/jquery.jlayout.js', array( 'jquery' ), CUNYJCAMP_VERSION );
+			wp_enqueue_script( 'jlayout_grid', get_bloginfo( 'template_directory' ) . '/js/jlayout.grid.js', array( 'jquery', 'jquery_jlayout' ), CUNYJCAMP_VERSION );			
+			wp_enqueue_script( 'cunyjcamp_primary_js', get_bloginfo( 'template_directory' ) . '/js/primary.js', array( 'jquery', 'jquery_jlayout' ), CUNYJCAMP_VERSION );			
 		}
 		
 	} // END enqueue_resources()

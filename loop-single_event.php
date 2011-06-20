@@ -13,7 +13,7 @@
 				</div>
 			</div>	
             	        
-    		<h2><?php the_title() ?></h2>
+    		<h2><?php the_title(); ?></h2>
 
 			<?php if ( !empty( $post->post_excerpt ) ): ?>
 			<div class="excerpt">
