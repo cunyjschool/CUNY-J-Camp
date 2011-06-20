@@ -23,11 +23,11 @@
 			
 			<div class="sidebar event-meta float-right">
 				
+				<?php if ( $registration_form_link = get_post_meta( get_the_id(), '_cunyjcamp_registration_form_link', true ) ): ?>
 				<div class="sidebar-item">
-									
-					<a class="event-registration button" href="#">Register</a>				
-				
+					<a class="event-registration button" href="<?php echo $registration_form_link; ?>">Register</a>				
 				</div>
+				<?php endif; ?>
 				
 				<div class="sidebar-item">
 					<h3>Date &amp; Time</h3>

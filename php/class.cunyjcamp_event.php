@@ -100,6 +100,8 @@ class cunyjcamp_event
 	 */
 	function post_meta_box() {
 		global $post;
+
+		$registration_form_link = get_post_meta( $post->ID, '_cunyjcamp_registration_form_link', true );
 		
 		$all_day_event = get_post_meta( $post->ID, '_cunyjcamp_all_day_event', true );
 		
@@ -137,6 +139,17 @@ class cunyjcamp_event
 		?>
 		
 		<div class="inner">
+			
+			<div class="registration-link-wrap option-item">
+				
+				<h4>Registration</h4>
+				
+				<div class="line-item">
+					<label for="cunyjcamp-registration-form-link">Link to registration form (optional)</label>
+					<input id="cunyjcamp-registration-form-link" name="cunyjcamp-registration-form-link" size="60" value="<?php echo $registration_form_link; ?>" />
+				</div>
+								
+			</div>
 			
 			<div class="date-time-wrap option-item hide-if-no-js">
 				
@@ -277,9 +290,12 @@ class cunyjcamp_event
 		}
 		
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
+
+			$registration_form_link = wp_kses( $_POST['cunyjcamp-registration-form-link'] );
+			update_post_meta( $post_id, '_cunyjcamp_registration_form_link', $registration_form_link );
 			
 			$all_day_event = $_POST['cunyjcamp-all-day-event'];
-			if ( !$all_day_event )
+			if ( $all_day_event != 'on' )
 				$all_day_event = 'off';
 			update_post_meta( $post_id, '_cunyjcamp_all_day_event', $all_day_event );
 			
