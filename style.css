@@ -448,6 +448,13 @@ body.page .sidebar.page-meta h3 {
 	color: #888888;
 }
 
+body.single .sidebar.event-meta .sidebar-item p.instructor-bio .avatar {
+	float: left;
+	margin-top: 3px;
+	margin-right: 8px;
+	margin-bottom: 5px;
+}
+
 body.single .share-buttons {
 	margin-left: 20px;
 	width: 165px;
