@@ -114,7 +114,7 @@ a img {
 }
 
 .wrap {
-	width: 860px;
+	width: 920px;
 }
 
 .main {
@@ -275,8 +275,7 @@ a img {
 /* HOME */
 
 body.home-page .promo-video {
-	width: 330px;
-	height: 400px;
+	width: 500px;
 }
 
 body.home-page .promo-text {
