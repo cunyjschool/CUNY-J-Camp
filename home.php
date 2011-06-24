@@ -13,25 +13,34 @@
 			'meta_key' => '_cunyjcamp_end_timestamp',
 		);
 		$all_events = new WP_Query( $args );
+		
+		$total_events = $all_events->post_count;
+		$index = 1;
+		$promo_shown = false;
 	?>
 	
 	<?php if ( $all_events->have_posts() ) : ?>
-		
-	<div class="promo-video float-right">
-		
-		<iframe src="http://player.vimeo.com/video/25087510?title=0&amp;byline=0&amp;portrait=0" width="331" height="186" frameborder="0"></iframe>
-		
-		<?php if ( $promo_text = cunyjcamp_get_theme_option( 'home_introduction_text' ) ): ?>
-		<div class="promo-text entry">
-			<?php echo wpautop( $promo_text ); ?>
-		</div>
-		<?php endif; ?>
-		
-	</div><!-- END .promo-video -->
 	
 	<div class="events-table">
 
-	<?php while ( $all_events->have_posts()) : $all_events->the_post(); ?>
+	<?php while ( $all_events->have_posts() ) : $all_events->the_post(); ?>
+		
+		<?php if ( ( $index == $total_events || $index == 2 ) && !$promo_shown ): ?>
+			
+			<div class="promo-video event-box float-left">
+
+				<iframe src="http://player.vimeo.com/video/25087510?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0"></iframe>
+
+				<?php if ( $promo_text = cunyjcamp_get_theme_option( 'home_introduction_text' ) ): ?>
+				<div class="promo-text entry">
+					<?php echo wpautop( $promo_text ); ?>
+				</div>
+				<?php endif; ?>
+
+			</div><!-- END .promo-video -->
+			<?php $promo_shown = true; ?>
+			
+		<?php endif; ?>
 
 		<a class="post post-type-event event-box float-left<?php if ( !has_post_thumbnail() ) { echo ' no-thumbnail'; } ?>" href="<?php the_permalink(); ?>">
 			
@@ -74,6 +83,8 @@
 			<span class="learn-more"><em class="hidden-text">Details</em> &rarr;</span>
 
 		</a><!-- END .post.event-box -->
+		
+		<?php $index++; ?>
 
 	<?php endwhile; ?>
 	

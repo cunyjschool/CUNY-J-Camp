@@ -59,6 +59,7 @@ class cunyjcamp_event
 					'comments',
 					'excerpt',
 					'thumbnail',
+					'revisions',
 				),
 				'taxonomies' => array(
 				)

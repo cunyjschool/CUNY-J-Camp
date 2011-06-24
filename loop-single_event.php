@@ -54,10 +54,9 @@
 							if ( !empty( $instructor->description ) ) {
 								echo '<p class="instructor-bio">';
 								// Search the string for an email address so we can try to get an avatar
-								$email_address = array();
 								$address_pattern = "/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i";
-								preg_match_all( $address_pattern, $instructor->description, $email_address );
-								if ( count( $email_address ) )
+								preg_match( $address_pattern, $instructor->description, $email_address );
+								if ( !empty( $email_address ) )
 									echo get_avatar( $email_address[0], 48 );
 								echo $instructor->description . '</p>';
 							}
