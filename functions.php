@@ -1,6 +1,6 @@
 <?php
 
-define( 'CUNYJCAMP_VERSION', '0.5c' );
+define( 'CUNYJCAMP_VERSION', '0.5' );
 
 // Require necessary files
 require_once( 'php/class.cunyjcamp_event.php' );
@@ -57,7 +57,7 @@ class cunyjcamp
 	function register_menus() {
 		
 		$args = array( 
-			'primary-navigation' => 'Primary Navigation',
+			'page_navigation' => 'Page Navigation',
 		);
 		register_nav_menus( $args );
 		
