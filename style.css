@@ -74,6 +74,7 @@ a:hover {
 a img {
 	border: none;
 	text-decoration: none;
+	vertical-align: middle;
 }
 
 .align-left {
@@ -160,6 +161,28 @@ a img {
 	color: #222222;
 	padding-top: 2px;
 	padding-bottom: 2px;
+}
+
+.entry img.alignleft {
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.entry img.alignright {
+	float: right;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.entry img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /**
