@@ -4,7 +4,7 @@ Theme URI: http://cunyjcamp.com
 Description: Events theme for CUNY J-Camp, the continuing education program
 Author: Daniel Bachhuber, Joe Filippazzo
 Author URI: http://tech.journalism.cuny.edu/staff/
-Version: 0.5b
+Version: 0.5c
 License: GNU General Public License
 License URI: license.txt
 */
@@ -280,6 +280,7 @@ body.home-page .wrap {
 
 body.home-page .promo-video {
 	width: 500px;
+	margin-bottom: 10px;
 }
 
 body.home-page .promo-text {
