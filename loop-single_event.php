@@ -13,7 +13,7 @@
 				</div>
 			</div>	
             	        
-    		<h2><?php the_title() ?></h2>
+    		<h2><?php the_title(); ?></h2>
 
 			<?php if ( !empty( $post->post_excerpt ) ): ?>
 			<div class="excerpt">
@@ -23,11 +23,11 @@
 			
 			<div class="sidebar event-meta float-right">
 				
+				<?php if ( $registration_form_link = get_post_meta( get_the_id(), '_cunyjcamp_registration_form_link', true ) ): ?>
 				<div class="sidebar-item">
-									
-					<a class="event-registration button" href="#">Register</a>				
-				
+					<a class="event-registration button" href="<?php echo $registration_form_link; ?>">Register</a>				
 				</div>
+				<?php endif; ?>
 				
 				<div class="sidebar-item">
 					<h3>Date &amp; Time</h3>
@@ -51,8 +51,16 @@
 						foreach ( $instructors as $instructor ) {
 							echo '<div class="instructor-item">';
 							echo '<h4>' . $instructor->name . '</h4>';
-							if ( !empty( $instructor->description ) ) 
-								echo '<p class="instructor-bio">' . $instructor->description . '</p>';
+							if ( !empty( $instructor->description ) ) {
+								echo '<p class="instructor-bio">';
+								// Search the string for an email address so we can try to get an avatar
+								$email_address = array();
+								$address_pattern = "/[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/i";
+								preg_match_all( $address_pattern, $instructor->description, $email_address );
+								if ( count( $email_address ) )
+									echo get_avatar( $email_address[0], 48 );
+								echo $instructor->description . '</p>';
+							}
 							echo '</div>';
 						}
 					?>
