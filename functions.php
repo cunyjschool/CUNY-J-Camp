@@ -57,7 +57,7 @@ class cunyjcamp
 	function register_menus() {
 		
 		$args = array( 
-			'primary-navigation' => 'Primary Navigation',
+			'page_navigation' => 'Page Navigation',
 		);
 		register_nav_menus( $args );
 		

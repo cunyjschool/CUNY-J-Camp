@@ -1,16 +1,14 @@
 <div class="sidebar page-meta float-right">
 	
 	<div class="sidebar-item">
-	<h3>Pages</h3>
-	<ul>
 	<?php 
-		$args = array(
-			'title_li' => false,
-			'sort_column' => 'menu_order',
-		);
-		wp_list_pages( $args ); 
+	$args = array(
+		'theme_location' => 'page_navigation',
+		'fallback_cb' => false,
+		'container' => false,
+	);
+	wp_nav_menu( $args );
 	?>
-	</ul>
 	</div>
 
 </div><!-- END .sidebar -->
