@@ -114,6 +114,10 @@ a img {
 }
 
 .wrap {
+	width: 860px;
+}
+
+body.home-page .wrap {
 	width: 920px;
 }
 
