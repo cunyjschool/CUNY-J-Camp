@@ -32,6 +32,10 @@
 	padding-bottom: 5px;
 }
 
+#cunyjcamp-event .inner .line-item label {
+	padding-bottom: 5px;
+}
+
 #cunyjcamp-event .inner .line-item .pick-date,
 #cunyjcamp-event .inner .line-item .pick-time {
 	display: inline-block;

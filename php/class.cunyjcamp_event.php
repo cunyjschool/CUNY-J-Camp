@@ -102,6 +102,10 @@ class cunyjcamp_event
 	function post_meta_box() {
 		global $post;
 
+		$event_active = get_post_meta( $post->ID, '_cunyjcamp_event_active', true );
+		if ( $event_active != 'on' )
+			$event_active = 'off';
+
 		$registration_form_link = get_post_meta( $post->ID, '_cunyjcamp_registration_form_link', true );
 		$eventbrite_id = get_post_meta( $post->ID, '_cunyjcamp_eventbrite_id', true );		
 		
@@ -141,6 +145,16 @@ class cunyjcamp_event
 		?>
 		
 		<div class="inner">
+			
+			<div class="event-active-wrap option-item">
+				<div class="line-item">
+					<label for="cunyjcamp-event-active">This event is:</label>
+					<select id="cunyjcamp-event-active" name="cunyjcamp-event-active">
+						<option value="on"<?php if ( $event_active == 'on' ) { echo ' selected="selected"'; } ?>>Active, and should be visible across the site</option>
+						<option value="off"<?php if ( $event_active == 'off' ) { echo ' selected="selected"'; } ?>>Inactive, and should be hidden</option>
+					</select>
+				</div>
+			</div>
 			
 			<div class="registration-link-wrap option-item">
 				
@@ -298,6 +312,11 @@ class cunyjcamp_event
 		}
 		
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
+			
+			$event_active = $_POST['cunyjcamp-event-active'];
+			if ( $event_active != 'on' )
+				$event_active = 'off';
+			update_post_meta( $post_id, '_cunyjcamp_event_active', $event_active );
 
 			$registration_form_link = wp_kses( $_POST['cunyjcamp-registration-form-link'] );
 			update_post_meta( $post_id, '_cunyjcamp_registration_form_link', $registration_form_link );
