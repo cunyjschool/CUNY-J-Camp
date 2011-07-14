@@ -103,6 +103,7 @@ class cunyjcamp_event
 		global $post;
 
 		$registration_form_link = get_post_meta( $post->ID, '_cunyjcamp_registration_form_link', true );
+		$eventbrite_id = get_post_meta( $post->ID, '_cunyjcamp_eventbrite_id', true );		
 		
 		$all_day_event = get_post_meta( $post->ID, '_cunyjcamp_all_day_event', true );
 		
@@ -148,6 +149,12 @@ class cunyjcamp_event
 				<div class="line-item">
 					<label for="cunyjcamp-registration-form-link">Link to registration form (optional)</label>
 					<input id="cunyjcamp-registration-form-link" name="cunyjcamp-registration-form-link" size="60" value="<?php echo $registration_form_link; ?>" />
+				</div>
+				
+				<div class="line-item">
+					<label for="cunyjcamp-registration-form-link">Eventbrite ID</label>
+					<input id="cunyjcamp-eventbrite-id" name="cunyjcamp-eventbrite-id" size="60" value="<?php echo $eventbrite_id; ?>" />
+					<p class="description">Adding the Eventbrite ID will auto-generate a registration form at the bottom of the event. Tickets must already exist.</p>
 				</div>
 								
 			</div>
@@ -294,6 +301,9 @@ class cunyjcamp_event
 
 			$registration_form_link = wp_kses( $_POST['cunyjcamp-registration-form-link'] );
 			update_post_meta( $post_id, '_cunyjcamp_registration_form_link', $registration_form_link );
+			
+			$eventbrite_id = (int)$_POST['cunyjcamp-eventbrite-id'];
+			update_post_meta( $post_id, '_cunyjcamp_eventbrite_id', $eventbrite_id );
 			
 			$all_day_event = $_POST['cunyjcamp-all-day-event'];
 			if ( $all_day_event != 'on' )

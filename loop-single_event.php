@@ -70,6 +70,9 @@
         
 			<div class="entry">
             	<?php the_content(); ?>
+				<?php if ( $eventbrite_id = get_post_meta( get_the_id(), '_cunyjcamp_eventbrite_id', true ) ) : ?>
+				<p><iframe src="https://www.eventbrite.com/tickets-external?eid=<?php echo (int)$eventbrite_id; ?>&amp;ref=etckt" frameborder="0" marginwidth="5" marginheight="5" scrolling="auto" width="100%" height="275"></iframe></p>
+				<?php endif; ?>
 			</div>
         
         <?php endwhile; else: ?>
