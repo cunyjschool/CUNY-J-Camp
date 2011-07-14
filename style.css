@@ -115,13 +115,8 @@ a img {
 
 .wrap {
 	width: 860px;
-}
-
-.main {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 3px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .message {
