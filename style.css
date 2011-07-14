@@ -440,6 +440,10 @@ body.page .sidebar.page-meta {
 	margin-right: 15px;
 }
 
+body.page .sidebar.page-meta {
+	margin-top: 15px;
+}
+
 body.single .sidebar.event-meta .sidebar-item,
 body.page .sidebar.page-meta .sidebar-item {
 	padding-top: 5px;
@@ -451,6 +455,10 @@ body.page .sidebar.page-meta h3 {
 	font-style: italic;
 	font-weight: normal;
 	color: #888888;
+}
+
+body.page .sidebar.page-meta h4 a:hover {
+	color: #00B4FF;
 }
 
 body.single .sidebar.event-meta .sidebar-item p.instructor-bio .avatar {
@@ -477,7 +485,7 @@ body.page .sidebar.page-meta .sidebar-item ul {
 }
 
 body.page .sidebar.page-meta .sidebar-item ul li {
-	
+	padding-bottom: 5px;
 }
 
 body.single .post .entry,

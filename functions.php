@@ -345,9 +345,9 @@ function cunyjcamp_get_theme_option( $key ) {
 } // END cunyjcamp_get_theme_option()
 
 /**
- * cunyjcamp_get_date_time()
+ * Produce the date and time according to our style guide
  */
-function cunyjcamp_get_date_time( $type ) {
+function cunyjcamp_get_date_time( $type, $markup = true ) {
 	global $post;
 	
 	if ( !isset( $post ) )
@@ -381,19 +381,25 @@ function cunyjcamp_get_date_time( $type ) {
 		$start_time = date( $time_format, $start_timestamp );
 		
 		$end_date = date( $date_format, $end_timestamp );
-		$end_time = date( $time_format, $end_timestamp );		
+		$end_time = date( $time_format, $end_timestamp );
+		
+		// We're just adding line breaks if they're needed
+		if ( $markup )
+			$markup = '<br />';
+		else
+			$markup = ' ';
 		
 		if ( $start_date != $end_date && $all_day_event == 'on' )
-			$html = $start_date . '<br />to ' . $end_date;
+			$html = $start_date . $markup . 'to ' . $end_date;
 
 		if ( $start_date != $end_date && $all_day_event != 'on' )
-			$html = $start_date . ' at ' . $start_time . '<br />to ' . $end_date . ' at ' . $end_time;
+			$html = $start_date . ' at ' . $start_time . $markup . 'to ' . $end_date . ' at ' . $end_time;
 		
 		if ( $start_date == $end_date && $all_day_event == 'on' )
 			$html = $start_date;
 
 		if ( $start_date == $end_date && $all_day_event != 'on' )
-			$html = $start_date . '<br />from ' . $start_time . ' to ' . $end_time;
+			$html = $start_date . $markup . 'from ' . $start_time . ' to ' . $end_time;
 		
 		
 	}
