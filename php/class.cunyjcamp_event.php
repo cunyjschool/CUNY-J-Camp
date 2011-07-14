@@ -103,8 +103,8 @@ class cunyjcamp_event
 		global $post;
 
 		$event_active = get_post_meta( $post->ID, '_cunyjcamp_event_active', true );
-		if ( $event_active != 'on' )
-			$event_active = 'off';
+		if ( $event_active != 'off' )
+			$event_active = 'on';
 
 		$registration_form_link = get_post_meta( $post->ID, '_cunyjcamp_registration_form_link', true );
 		$eventbrite_id = get_post_meta( $post->ID, '_cunyjcamp_eventbrite_id', true );		
@@ -314,8 +314,8 @@ class cunyjcamp_event
 		if ( !wp_is_post_revision( $post ) && !wp_is_post_autosave( $post ) ) {
 			
 			$event_active = $_POST['cunyjcamp-event-active'];
-			if ( $event_active != 'on' )
-				$event_active = 'off';
+			if ( $event_active != 'off' )
+				$event_active = 'on';
 			update_post_meta( $post_id, '_cunyjcamp_event_active', $event_active );
 
 			$registration_form_link = wp_kses( $_POST['cunyjcamp-registration-form-link'] );
