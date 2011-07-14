@@ -9,6 +9,13 @@
 			'orderby' => 'meta_value_num',
 			'order' => 'asc',		
 			'meta_key' => '_cunyjcamp_end_timestamp',
+			'meta_query' => array(
+				array(
+					'key' => '_cunyjcamp_event_active',
+					'value' => 'on',					
+					'compare' => '=',
+				),
+			),			
 		);
 		$all_events = new WP_Query( $args );
 	?>
