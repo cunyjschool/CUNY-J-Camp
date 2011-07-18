@@ -9,6 +9,13 @@
 			'orderby' => 'meta_value_num',
 			'order' => 'asc',		
 			'meta_key' => '_cunyjcamp_end_timestamp',
+			'meta_query' => array(
+				array(
+					'key' => '_cunyjcamp_event_active',
+					'value' => 'on',					
+					'compare' => '=',
+				),
+			),			
 		);
 		$all_events = new WP_Query( $args );
 	?>
@@ -17,6 +24,9 @@
 		<?php while( $all_events->have_posts() ): $all_events->the_post(); ?>
 			<li>
 				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+				<?php if ( $date_time = cunyjcamp_get_date_time( 'long_both', false ) ): ?>
+				<p><?php echo $date_time; ?></p>
+				<?php endif; ?>
 			</li>
 		<?php endwhile; ?>	
 		</ul>

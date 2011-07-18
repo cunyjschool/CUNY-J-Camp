@@ -9,21 +9,38 @@
 	<meta name="copyright" content="Copyright <?php echo time( 'Y' ); ?> City University of New York Graduate School of Journalism" />
 	<meta http-equiv="content-language" content="en" />
 	
+	<!-- Facebook Open Graph junk. More info: http://developers.facebook.com/docs/reference/plugins/like/ -->
+	<meta property="og:type" content="website" />		
+	<!-- We have a FB app for cunyjcamp.com and dev.journalism.cuny.edu because we can only whitelist one domain at a time -->
+	<?php if ( $_SERVER['HTTP_HOST'] == 'cunyjcamp.com' ) : ?>
+		<meta property="fb:app_id" content="164820756921758" />
+	<?php else: ?>
+		<meta property="fb:app_id" content="147788208628895" />		
+	<?php endif; ?>
 	<?php if ( is_single() ): ?>
-		<?php global $post; ?>
-		<meta property="og:url" content="<?php the_permalink(); ?>" />
-		<meta property="og:type" content="website" />		
-		<meta property="og:title" content="<?php the_title(); ?>" />		
-		<meta property="og:description" content="<?php echo strip_tags( $post->post_excerpt ); ?>" />
+	<?php global $post; ?>
+	<meta property="og:title" content="<?php the_title(); ?>" />	
+	<meta property="og:url" content="<?php the_permalink(); ?>" />			
+	<meta property="og:description" content="<?php echo strip_tags( $post->post_excerpt ); ?>" />
 		<?php if ( has_post_thumbnail() ): ?>
 			<?php 
 				$post_image = wp_get_attachment_image_src( get_post_thumbnail_id() );
 				$post_image = $post_image[0];
 			?>
 		<?php else: ?>
-			<?php $post_image = ''; ?>
+			<?php $post_image = get_bloginfo('template_directory') . '/img/logo_s280.jpg'; ?>
 		<?php endif; ?>
-		<meta property="og:image" content="<?php echo $post_image; ?>" />
+	<meta property="og:image" content="<?php echo $post_image; ?>" />
+	<?php elseif ( is_page() ): ?>
+	<meta property="og:title" content="<?php the_title(); ?>" />		
+	<meta property="og:url" content="<?php the_permalink(); ?>" />
+	<meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/img/logo_s280.jpg" />	
+	<?php else: ?>
+	<meta property="og:title" content="<?php bloginfo( 'title' ); ?>" />		
+	<meta property="og:url" content="<?php bloginfo( 'url' ); ?>" />			
+	<meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
+	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/img/logo_s280.jpg" />
 	<?php endif; ?>	
 
 	<?php cunyjcamp_head_title(); // Generates the <title> tag ?>

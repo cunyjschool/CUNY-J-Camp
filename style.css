@@ -4,7 +4,7 @@ Theme URI: http://cunyjcamp.com
 Description: Events theme for CUNY J-Camp, the continuing education program
 Author: Daniel Bachhuber, Joe Filippazzo
 Author URI: http://tech.journalism.cuny.edu/staff/
-Version: 0.5
+Version: 0.7a
 License: GNU General Public License
 License URI: license.txt
 */
@@ -115,18 +115,15 @@ a img {
 
 .wrap {
 	width: 860px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-body.home-page .wrap {
-	width: 920px;
-}
-
-.main {
-	padding-left: 20px;
-	padding-right: 20px;
+body.single .main,
+body.page .main {
 	padding-top: 10px;
-	padding-bottom: 3px;
 }
+
 
 .message {
 	margin-top: 10px;
@@ -264,9 +261,9 @@ body.home-page .wrap {
 /* FOOTER */
 
 .footer {
-	padding-left: 20px;
+	padding-left: 30px;
 	padding-right: 20px;
-	padding-top: 20px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 	color: #888888;
 }
@@ -440,6 +437,10 @@ body.page .sidebar.page-meta {
 	margin-right: 15px;
 }
 
+body.page .sidebar.page-meta {
+	margin-top: 15px;
+}
+
 body.single .sidebar.event-meta .sidebar-item,
 body.page .sidebar.page-meta .sidebar-item {
 	padding-top: 5px;
@@ -451,6 +452,10 @@ body.page .sidebar.page-meta h3 {
 	font-style: italic;
 	font-weight: normal;
 	color: #888888;
+}
+
+body.page .sidebar.page-meta h4 a:hover {
+	color: #00B4FF;
 }
 
 body.single .sidebar.event-meta .sidebar-item p.instructor-bio .avatar {
@@ -477,7 +482,7 @@ body.page .sidebar.page-meta .sidebar-item ul {
 }
 
 body.page .sidebar.page-meta .sidebar-item ul li {
-	
+	padding-bottom: 5px;
 }
 
 body.single .post .entry,
