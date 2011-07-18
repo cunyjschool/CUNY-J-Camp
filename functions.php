@@ -1,6 +1,6 @@
 <?php
 
-define( 'CUNYJCAMP_VERSION', '0.5' );
+define( 'CUNYJCAMP_VERSION', '0.7a' );
 
 // Require necessary files
 require_once( 'php/class.cunyjcamp_event.php' );
