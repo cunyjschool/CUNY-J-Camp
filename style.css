@@ -458,6 +458,10 @@ body.page .sidebar.page-meta h4 a:hover {
 	color: #00B4FF;
 }
 
+body.single .sidebar.event-meta .sidebar-item .indent {
+	margin-left: 15px;
+}
+
 body.single .sidebar.event-meta .sidebar-item p.instructor-bio .avatar {
 	float: left;
 	margin-top: 3px;

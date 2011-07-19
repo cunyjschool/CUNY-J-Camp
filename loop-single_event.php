@@ -40,6 +40,33 @@
 				
 				<?php
 					$args = array(
+						'orderby' => 'term_order',
+					);
+					$locations = wp_get_object_terms( get_the_id(), 'cunyjcamp_locations', $args );
+				?>
+				<?php if ( !empty( $locations ) ): ?>
+				<div class="sidebar-item instructor">
+					<h3>Location</h3>
+					<?php
+						foreach ( $locations as $location ) {
+							echo '<div class="location-item';
+							if ( $location->parent ) {
+								echo ' indent';
+							}
+							echo '">';
+							echo '<h4>' . $location->name . '</h4>';
+							if ( !empty( $location->description ) ) {
+								echo '<p class="location-description">';
+								echo $location->description . '</p>';
+							}
+							echo '</div>';
+						}
+					?>
+				</div>
+				<?php endif; ?>
+				
+				<?php
+					$args = array(
 						'orderby' => 'name',
 					);
 					$instructors = wp_get_object_terms( get_the_id(), 'cunyjcamp_instructors', $args );
